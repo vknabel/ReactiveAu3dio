@@ -2,7 +2,7 @@ import ValidatedExtension
 
 public struct HasScenarios: Validator {
     public static func validate(_ value: Ssi) throws -> Bool {
-        return value.contains(RootProvider<[Scenario]>.scenarios.key)
+        return value.contains(SsiProvider<[Scenario]>.scenarios.key)
     }
 }
 

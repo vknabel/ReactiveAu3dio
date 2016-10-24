@@ -13,7 +13,7 @@ public typealias Scenario = StrictInjector<ScenarioField>
 public typealias ScenarioProvider<v> = Provider<ScenarioField, v>
 
 public extension Provider {
-    public static var scenarios: RootProvider<[Scenario]> {
+    public static var scenarios: SsiProvider<[Scenario]> {
         return .derive()
     }
 }

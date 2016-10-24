@@ -1,7 +1,7 @@
 import EasyInject
 
 public extension Provider {
-    public static var counter: RootProvider<Int> {
+    public static var counter: SsiProvider<Int> {
         return .derive()
     }
 }
