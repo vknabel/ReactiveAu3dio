@@ -9,14 +9,15 @@ target 'ReactiveAu3dio' do
   pod 'EasyInject', '~> 1.1'
   pod 'ValidatedExtension', '~> 4.0'
   pod 'RxSwift', '~> 3.0'
-  pod 'RxBlocking', '~> 3.0'
-  pod 'RxTest', '~> 3.0'
-  pod 'Quick', '~> 0.10'
-  pod 'Nimble', '~> 5.1.0'
 
   target 'ReactiveAu3dioTests' do
     inherit! :search_paths
     # Pods for testing
+
+    pod 'Quick', '~> 0.10'
+    pod 'Nimble', '~> 5.1.0'
+    pod 'RxBlocking', '~> 3.0'
+    pod 'RxTest', '~> 3.0'
   end
 
 end
