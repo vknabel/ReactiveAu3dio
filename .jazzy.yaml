@@ -1,0 +1,15 @@
+author: Valentin Knabel
+author_url: https://twitter.com/vknabel
+github_url: https://github.com/vknabel/ReactiveAu3dio
+module: ReactiveAu3dio
+module_version: 0.0.1
+root_url: https://vknabel.github.io/ReactiveAu3dio/
+exclude: ReactiveAu3dioTests/
+readme: README.md
+output: docs/
+theme: fullwidth
+xcodebuild_arguments:
+  - "-workspace"
+  - "ReactiveAu3dio.xcworkspace"
+  - "-scheme"
+  - "ReactiveAu3dio"
