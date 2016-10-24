@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+dist: trusty
+matrix:
+  include:
+    - os: osx
+      language: objective-c
+      osx_image: xcode8
