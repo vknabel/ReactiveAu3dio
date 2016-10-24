@@ -10,7 +10,7 @@
 		17686D8C1DD72BFAE7A25115 /* Pods_ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD39BF0C616967760E09690 /* Pods_ReactiveAu3dio.framework */; };
 		743413FEA723A1E43617F835 /* Pods_ReactiveAu3dioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B90917C80FA8455BECC8C1 /* Pods_ReactiveAu3dioTests.framework */; };
 		BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */; };
-		BAB02B6A1DBE44400003FB57 /* StoreConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */; };
+		BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */; };
 		BAB14DE81DBE014B006D119D /* ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */; };
 		BAB14DEF1DBE014B006D119D /* ReactiveAu3dio.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAB14E0B1DBE026B006D119D /* Action+Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E011DBE026B006D119D /* Action+Counter.swift */; };
@@ -38,7 +38,7 @@
 		A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.release.xcconfig"; sourceTree = "<group>"; };
 		AAD33EC8E7804D1EA108D3C5 /* Pods-ReactiveAu3dio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.release.xcconfig"; sourceTree = "<group>"; };
 		BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
-		BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreConvenienceTests.swift; sourceTree = "<group>"; };
+		BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceReducerTests.swift; sourceTree = "<group>"; };
 		BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAu3dio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAu3dio.h; sourceTree = "<group>"; };
 		BAB14DE21DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */,
-				BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */,
+				BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB02B6A1DBE44400003FB57 /* StoreConvenienceTests.swift in Sources */,
+				BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */,
 				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

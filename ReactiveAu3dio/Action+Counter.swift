@@ -10,7 +10,7 @@ public enum CounterAction: Action {
     case increase
     case decrease
 
-    public static var reducer: Reducer = typedReducer { (ssi: Ssi, action: CounterAction) in
+    public static var reducer: Reducer = actionReducer { (ssi: Ssi, action: CounterAction) in
         var state = ssi
         let current = (try? state.resolve(from: .counter)) ?? 0
         state.revoke(for: .counter)
@@ -23,7 +23,7 @@ public enum CounterAction: Action {
         }
     }
 
-    public static var logger: Reducer = typedReducer { (ssi: Ssi, action: CounterAction) in
+    public static var logger: Reducer = actionReducer { (ssi: Ssi, action: CounterAction) in
         var ssi = ssi
         let counter = (try? ssi.resolve(from: .counter)) ?? 0
         print("-", "CounterAction.\(action)", "=>", counter)

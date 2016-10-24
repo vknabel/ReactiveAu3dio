@@ -44,5 +44,5 @@ public extension Store {
 }
 
 public typealias Reducer = (Ssi, Action) -> Ssi
-public typealias TypedReducer<A: Action> = (Ssi, A) -> Ssi
+public typealias ActionReducer<A: Action> = (Ssi, A) -> Ssi
 public typealias Sdi = SdiInjector

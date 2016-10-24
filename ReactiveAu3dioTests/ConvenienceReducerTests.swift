@@ -1,5 +1,5 @@
 //
-//  StoreConvenienceSpec.swift
+//  ConvenienceReducerTests.swift
 //  ReactiveAu3dio
 //
 //  Created by Valentin Knabel on 24.10.16.
@@ -29,7 +29,7 @@ fileprivate struct HasName: Validator {
     }
 }
 
-final class StoreConvenienceTests: QuickSpec {
+final class ConvenienceReducerTests: QuickSpec {
     override func spec() {
         describe("reducer function") {
             it("keeps semantics") {
@@ -45,7 +45,7 @@ final class StoreConvenienceTests: QuickSpec {
         describe("typed reducer function") {
             it("will ignore different types") {
                 var executed = false
-                let typed = typedReducer { (ssi: Ssi, action: OneAction) in
+                let typed = actionReducer { (ssi: Ssi, action: OneAction) in
                     executed = true
                     return ssi
                 }
@@ -60,7 +60,7 @@ final class StoreConvenienceTests: QuickSpec {
 
             it("will be executed on same type") {
                 var executed = false
-                let typed = typedReducer { (ssi: Ssi, action: OneAction) in
+                let typed = actionReducer { (ssi: Ssi, action: OneAction) in
                     executed = true
                     return ssi
                 }

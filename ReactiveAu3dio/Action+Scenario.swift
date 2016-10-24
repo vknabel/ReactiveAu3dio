@@ -23,7 +23,7 @@ public enum ScenarioAction: Action {
         }
     })
 
-    public static var logger: Reducer = typedReducer { (ssi: Ssi, action: ScenarioAction) in
+    public static var logger: Reducer = actionReducer { (ssi: Ssi, action: ScenarioAction) in
         var ssi = ssi
         let scenarios = (try? ssi.resolve(from: .scenarios)) ?? []
         print("-", "ScenarioAction.\(action.name)")
