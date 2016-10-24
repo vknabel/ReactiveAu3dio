@@ -1,0 +1,6 @@
+framework module ValidatedExtension {
+  umbrella header "ValidatedExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

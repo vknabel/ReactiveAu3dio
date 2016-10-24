@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17686D8C1DD72BFAE7A25115 /* Pods_ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD39BF0C616967760E09690 /* Pods_ReactiveAu3dio.framework */; };
+		743413FEA723A1E43617F835 /* Pods_ReactiveAu3dioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B90917C80FA8455BECC8C1 /* Pods_ReactiveAu3dioTests.framework */; };
+		BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */; };
+		BAB02B6A1DBE44400003FB57 /* StoreConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */; };
 		BAB14DE81DBE014B006D119D /* ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */; };
-		BAB14DED1DBE014B006D119D /* ReactiveAu3dioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14DEC1DBE014B006D119D /* ReactiveAu3dioTests.swift */; };
 		BAB14DEF1DBE014B006D119D /* ReactiveAu3dio.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAB14E0B1DBE026B006D119D /* Action+Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E011DBE026B006D119D /* Action+Counter.swift */; };
+		BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E021DBE026B006D119D /* Action+Goal.swift */; };
+		BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E031DBE026B006D119D /* Action+Scenario.swift */; };
+		BAB14E101DBE026B006D119D /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E061DBE026B006D119D /* Redux.swift */; };
+		BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E071DBE026B006D119D /* Redux+Convenience.swift */; };
+		BAB14E121DBE026B006D119D /* Redux+Validated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E081DBE026B006D119D /* Redux+Validated.swift */; };
+		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
+		BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +34,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41B90917C80FA8455BECC8C1 /* Pods_ReactiveAu3dioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveAu3dioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD39BF0C616967760E09690 /* Pods_ReactiveAu3dio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveAu3dio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.release.xcconfig"; sourceTree = "<group>"; };
+		AAD33EC8E7804D1EA108D3C5 /* Pods-ReactiveAu3dio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.release.xcconfig"; sourceTree = "<group>"; };
+		BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreConvenienceTests.swift; sourceTree = "<group>"; };
 		BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAu3dio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAu3dio.h; sourceTree = "<group>"; };
 		BAB14DE21DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB14DE71DBE014B006D119D /* ReactiveAu3dioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveAu3dioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAB14DEC1DBE014B006D119D /* ReactiveAu3dioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveAu3dioTests.swift; sourceTree = "<group>"; };
 		BAB14DEE1DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAB14E011DBE026B006D119D /* Action+Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Counter.swift"; sourceTree = "<group>"; };
+		BAB14E021DBE026B006D119D /* Action+Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Goal.swift"; sourceTree = "<group>"; };
+		BAB14E031DBE026B006D119D /* Action+Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Scenario.swift"; sourceTree = "<group>"; };
+		BAB14E061DBE026B006D119D /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
+		BAB14E081DBE026B006D119D /* Redux+Validated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Validated.swift"; sourceTree = "<group>"; };
+		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Validated.swift"; sourceTree = "<group>"; };
+		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17686D8C1DD72BFAE7A25115 /* Pods_ReactiveAu3dio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +71,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB14DE81DBE014B006D119D /* ReactiveAu3dio.framework in Frameworks */,
+				743413FEA723A1E43617F835 /* Pods_ReactiveAu3dioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205FDAAFC7B8BE355A5FF8BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FD39BF0C616967760E09690 /* Pods_ReactiveAu3dio.framework */,
+				41B90917C80FA8455BECC8C1 /* Pods_ReactiveAu3dioTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32260CCA5C1209DE08415D6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */,
+				AAD33EC8E7804D1EA108D3C5 /* Pods-ReactiveAu3dio.release.xcconfig */,
+				BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */,
+				A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BAB14DD41DBE014B006D119D = {
 			isa = PBXGroup;
 			children = (
 				BAB14DE01DBE014B006D119D /* ReactiveAu3dio */,
 				BAB14DEB1DBE014B006D119D /* ReactiveAu3dioTests */,
 				BAB14DDF1DBE014B006D119D /* Products */,
+				32260CCA5C1209DE08415D6F /* Pods */,
+				205FDAAFC7B8BE355A5FF8BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +122,14 @@
 			isa = PBXGroup;
 			children = (
 				BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */,
+				BAB14E061DBE026B006D119D /* Redux.swift */,
+				BAB14E071DBE026B006D119D /* Redux+Convenience.swift */,
+				BAB14E081DBE026B006D119D /* Redux+Validated.swift */,
+				BAB14E011DBE026B006D119D /* Action+Counter.swift */,
+				BAB14E021DBE026B006D119D /* Action+Goal.swift */,
+				BAB14E031DBE026B006D119D /* Action+Scenario.swift */,
+				BAB14E091DBE026B006D119D /* Scenario.swift */,
+				BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */,
 				BAB14DE21DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dio;
@@ -80,7 +138,8 @@
 		BAB14DEB1DBE014B006D119D /* ReactiveAu3dioTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAB14DEC1DBE014B006D119D /* ReactiveAu3dioTests.swift */,
+				BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */,
+				BAB02B691DBE44400003FB57 /* StoreConvenienceTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -104,10 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAB14DF21DBE014B006D119D /* Build configuration list for PBXNativeTarget "ReactiveAu3dio" */;
 			buildPhases = (
+				AE7913AD0F83AA64A0FDCFA9 /* [CP] Check Pods Manifest.lock */,
 				BAB14DD91DBE014B006D119D /* Sources */,
 				BAB14DDA1DBE014B006D119D /* Frameworks */,
 				BAB14DDB1DBE014B006D119D /* Headers */,
 				BAB14DDC1DBE014B006D119D /* Resources */,
+				E47C6B7F33F5393E96ABFE94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAB14DF51DBE014B006D119D /* Build configuration list for PBXNativeTarget "ReactiveAu3dioTests" */;
 			buildPhases = (
+				C8DA17805593980381579A53 /* [CP] Check Pods Manifest.lock */,
 				BAB14DE31DBE014B006D119D /* Sources */,
 				BAB14DE41DBE014B006D119D /* Frameworks */,
 				BAB14DE51DBE014B006D119D /* Resources */,
+				1FBAA0246CD817F83B523B4F /* [CP] Embed Pods Frameworks */,
+				902B44E705D94DA304936D81 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +213,7 @@
 					BAB14DDD1DBE014B006D119D = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = LMF68UG2BU;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					BAB14DE61DBE014B006D119D = {
@@ -193,11 +258,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FBAA0246CD817F83B523B4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		902B44E705D94DA304936D81 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE7913AD0F83AA64A0FDCFA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8DA17805593980381579A53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E47C6B7F33F5393E96ABFE94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAB14DD91DBE014B006D119D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB14E121DBE026B006D119D /* Redux+Validated.swift in Sources */,
+				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
+				BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */,
+				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,
+				BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */,
+				BAB14E131DBE026B006D119D /* Scenario.swift in Sources */,
+				BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */,
+				BAB14E0B1DBE026B006D119D /* Action+Counter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +356,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB14DED1DBE014B006D119D /* ReactiveAu3dioTests.swift in Sources */,
+				BAB02B6A1DBE44400003FB57 /* StoreConvenienceTests.swift in Sources */,
+				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +473,9 @@
 		};
 		BAB14DF31DBE014B006D119D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LMF68UG2BU;
@@ -334,13 +488,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.ReactiveAu3dio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		BAB14DF41DBE014B006D119D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAD33EC8E7804D1EA108D3C5 /* Pods-ReactiveAu3dio.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LMF68UG2BU;
@@ -359,7 +516,9 @@
 		};
 		BAB14DF61DBE014B006D119D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = LMF68UG2BU;
 				INFOPLIST_FILE = ReactiveAu3dioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -371,7 +530,9 @@
 		};
 		BAB14DF71DBE014B006D119D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = LMF68UG2BU;
 				INFOPLIST_FILE = ReactiveAu3dioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -400,6 +561,7 @@
 				BAB14DF41DBE014B006D119D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAB14DF51DBE014B006D119D /* Build configuration list for PBXNativeTarget "ReactiveAu3dioTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +570,7 @@
 				BAB14DF71DBE014B006D119D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
