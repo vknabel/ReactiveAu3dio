@@ -3,6 +3,7 @@ import RxSwift
 
 public enum RootElementKey { }
 public typealias RootElements = GenericProvidableKey<RootElementKey>
+/// The Single Shared Injector. All data will be stored in this instance.
 public typealias Ssi = StrictInjector<RootElements>
 public typealias RootProvider<v> = Provider<RootElements, v>
 
@@ -44,5 +45,4 @@ public extension Store {
 }
 
 public typealias Reducer = (Ssi, Action) -> Ssi
-public typealias ActionReducer<A: Action> = (Ssi, A) -> Ssi
 public typealias Sdi = SdiInjector

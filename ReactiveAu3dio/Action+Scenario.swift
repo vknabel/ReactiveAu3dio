@@ -10,7 +10,7 @@ public enum ScenarioAction: Action {
         }
     }
 
-    public static var reducer = validatedReducer({ (validated: Validated<HasScenarios>, action: ScenarioAction) -> Ssi in
+    public static var reducer = validatedReducer(reducer: { (validated: Validated<HasScenarios>, action: ScenarioAction) -> Ssi in
         switch action {
         case let .append(newScenario):
             var scenarios = validated.scenarios
