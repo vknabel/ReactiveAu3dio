@@ -1,0 +1,124 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 4,
+      "symbol": "Provider.counter",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 9,
+      "symbol": "CounterAction",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 10,
+      "symbol": "CounterAction.increase",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 11,
+      "symbol": "CounterAction.decrease",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 13,
+      "symbol": "CounterAction.reducer",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Counter.swift",
+      "line": 26,
+      "symbol": "CounterAction.logger",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Scenario.swift",
+      "line": 3,
+      "symbol": "ScenarioAction",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Scenario.swift",
+      "line": 4,
+      "symbol": "ScenarioAction.append",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Scenario.swift",
+      "line": 13,
+      "symbol": "ScenarioAction.reducer",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Action+Scenario.swift",
+      "line": 26,
+      "symbol": "ScenarioAction.logger",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario+Validated.swift",
+      "line": 3,
+      "symbol": "HasScenarios",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario+Validated.swift",
+      "line": 10,
+      "symbol": "ValidatedType.scenarios",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario+Validated.swift",
+      "line": 15,
+      "symbol": "ScenarioValidator",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario+Validated.swift",
+      "line": 24,
+      "symbol": "ValidatedType.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario.swift",
+      "line": 3,
+      "symbol": "ScenarioFieldKey",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario.swift",
+      "line": 7,
+      "symbol": "Provider.scenarioName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Scenario.swift",
+      "line": 16,
+      "symbol": "Provider.scenarios",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio"
+}
