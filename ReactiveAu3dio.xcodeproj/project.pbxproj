@@ -18,7 +18,6 @@
 		BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E031DBE026B006D119D /* Action+Scenario.swift */; };
 		BAB14E101DBE026B006D119D /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E061DBE026B006D119D /* Redux.swift */; };
 		BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E071DBE026B006D119D /* Redux+Convenience.swift */; };
-		BAB14E121DBE026B006D119D /* Redux+Validated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E081DBE026B006D119D /* Redux+Validated.swift */; };
 		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
 		BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +49,6 @@
 		BAB14E031DBE026B006D119D /* Action+Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Scenario.swift"; sourceTree = "<group>"; };
 		BAB14E061DBE026B006D119D /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
-		BAB14E081DBE026B006D119D /* Redux+Validated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Validated.swift"; sourceTree = "<group>"; };
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Validated.swift"; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */,
 				BAB14E061DBE026B006D119D /* Redux.swift */,
 				BAB14E071DBE026B006D119D /* Redux+Convenience.swift */,
-				BAB14E081DBE026B006D119D /* Redux+Validated.swift */,
 				BAB14E011DBE026B006D119D /* Action+Counter.swift */,
 				BAB14E021DBE026B006D119D /* Action+Goal.swift */,
 				BAB14E031DBE026B006D119D /* Action+Scenario.swift */,
@@ -341,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB14E121DBE026B006D119D /* Redux+Validated.swift in Sources */,
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
 				BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */,
 				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,

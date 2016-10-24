@@ -23,6 +23,12 @@ fileprivate enum OtherAction: Action {
     case other
 }
 
+fileprivate struct HasName: Validator {
+    fileprivate static func validate(_ value: Ssi) throws -> Bool {
+        return value.providedKeys.contains("name")
+    }
+}
+
 final class StoreConvenienceTests: QuickSpec {
     override func spec() {
         describe("reducer function") {
@@ -107,6 +113,38 @@ final class StoreConvenienceTests: QuickSpec {
                 let opResult = operatorReducer(ssi, OneAction.one).debugDescription
                 let coResult = combinedReducer(ssi, OneAction.one).debugDescription
                 expect(opResult) == coResult
+            }
+        }
+
+        describe("validated reducer") {
+            it("won't be called when invalid ssi") {
+                var executed = false
+                let validated: Reducer = validatedReducer({ (named: Validated<HasName>, action: OneAction) -> Ssi in
+                    executed = true
+                    return named.value
+                })
+
+                expect(executed) == false
+                _ = validated(Ssi(), OneAction.one)
+                expect(executed) == false
+                _ = validated(Ssi().providing(key: "name", usingFactory: { _ in "MyName" }), OneAction.one)
+                expect(executed) == true
+            }
+
+            it("won't be called when invalid action") {
+                var executed = false
+                let validated: Reducer = validatedReducer({ (named: Validated<HasName>, action: OneAction) -> Ssi in
+                    executed = true
+                    return named.value
+                })
+
+                let ssi = Ssi().providing(key: "name", usingFactory: { _ in "MyName" })
+
+                expect(executed) == false
+                _ = validated(ssi, OtherAction.other)
+                expect(executed) == false
+                _ = validated(ssi, OneAction.one)
+                expect(executed) == true
             }
         }
     }

@@ -50,6 +50,26 @@ final class StoreTests: QuickSpec {
                 expect(first.debugDescription) == initial.debugDescription
             }
 
+            it("skips further initials") {
+                let scheduler = TestScheduler(initialClock: 0)
+                let initial = Ssi().providing([], for: .scenarios)
+                let initialStream = scheduler.createColdObservable([
+                    next(100, initial),
+                    next(100, initial)
+                    ]
+                )
+                let main = Store(
+                    initial: initialStream,
+                    reducers: []
+                )
+
+                var counter = 0
+                _ = main.ssio.subscribe(onNext: { _ in counter += 1 })
+                scheduler.start()
+                main.completed()
+                expect(counter) == 1
+            }
+
             it("won't apply reducers by default") {
                 let initial = Ssi().providing([], for: .scenarios)
                 let initialStream = Observable.just(initial)
@@ -91,7 +111,7 @@ final class StoreTests: QuickSpec {
 
                 _ = main.ssio.subscribe()
                 scheduler.start()
-
+                
                 expect(executed) == false
                 main.next(CounterAction.increase)
                 expect(executed) == true

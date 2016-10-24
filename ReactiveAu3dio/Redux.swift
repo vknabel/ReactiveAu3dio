@@ -23,7 +23,7 @@ public struct Store {
         aao = actionSubject.asObserver()
         sdi = Sdi()
         let actions = actionSubject.asObservable()
-        ssio = initialStream.flatMap { (initial: Ssi) -> Observable<Ssi> in
+        ssio = initialStream.single().flatMap { (initial: Ssi) -> Observable<Ssi> in
             return Observable.just(initial).concat(actions.scan(initial, accumulator: { rootInjector, action in
                 return reducers.reduce(rootInjector, { rootInjector, reducer in
                     reducer(rootInjector, action)
