@@ -39,6 +39,19 @@ final class LevelFieldsTests: QuickSpec {
             }
         }
 
+        describe("level with name") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithName(value: level)
+                expect(validated?.name).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing("Level Name", for: .levelName)
+                let validated = LevelWithName(value: level)
+                expect(validated?.name) == "Level Name"
+            }
+        }
+
         // MARK: Goals
         describe("level goals provider") {
             it("is deterministic") {
@@ -59,6 +72,19 @@ final class LevelFieldsTests: QuickSpec {
                 let level = Level().providing([], for: .levelGoals)
                 let isValid = try? LevelHasGoals.validate(level)
                 expect(isValid) == true
+            }
+        }
+
+        describe("level with goals") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithGoals(value: level)
+                expect(validated?.goals).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing([], for: .levelGoals)
+                let validated = LevelWithGoals(value: level)
+                expect(validated?.goals.count) == [].count
             }
         }
 
@@ -85,6 +111,19 @@ final class LevelFieldsTests: QuickSpec {
             }
         }
 
+        describe("level with background") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithBackground(value: level)
+                expect(validated?.background).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing("background.png", for: .levelBackground)
+                let validated = LevelWithBackground(value: level)
+                expect(validated?.background) == "background.png"
+            }
+        }
+
         // MARK: Entities
         describe("level entities provider") {
             it("is deterministic") {
@@ -108,6 +147,19 @@ final class LevelFieldsTests: QuickSpec {
             }
         }
 
+        describe("level with entities") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithEntities(value: level)
+                expect(validated?.entities.count).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing([], for: .levelEntities)
+                let validated = LevelWithEntities(value: level)
+                expect(validated?.entities.count) == [].count
+            }
+        }
+
         // MARK: Ambients
         describe("level ambients provider") {
             it("is deterministic") {
@@ -128,6 +180,19 @@ final class LevelFieldsTests: QuickSpec {
                 let level = Level().providing([], for: .levelAmbients)
                 let isValid = try? LevelHasAmbients.validate(level)
                 expect(isValid) == true
+            }
+        }
+
+        describe("level with ambients") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithAmbients(value: level)
+                expect(validated?.ambients.count).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing([], for: .levelAmbients)
+                let validated = LevelWithAmbients(value: level)
+                expect(validated?.ambients.count) == [].count
             }
         }
 
