@@ -11,8 +11,8 @@ matrix:
       script:
         - xcodebuild test -workspace ReactiveAu3dio.xcworkspace -scheme ReactiveAu3dio -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
 install:
-  - install-swiftlint.sh
-  - install-tailor.sh
+  - ./Scripts/install-swiftlint.sh
+  - ./Scripts/install-tailor.sh
 script:
   - tailor
   - swiftlint
