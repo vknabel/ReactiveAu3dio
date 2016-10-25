@@ -92,8 +92,8 @@ final class EntityFieldsTests: QuickSpec {
         // MARK: Sound
         describe("entity sound provider") {
             it("is deterministic") {
-                let firstProvider: EntityProvider = .entityName
-                let secondProvider: EntityProvider = .entityName
+                let firstProvider: EntityProvider = .entitySound
+                let secondProvider: EntityProvider = .entitySound
                 expect(firstProvider.key) == secondProvider.key
             }
         }
@@ -124,6 +124,24 @@ final class EntityFieldsTests: QuickSpec {
                 let entity = Entity().providing(sound, for: .entitySound)
                 let validated = EntityWithSound(value: entity)
                 expect(validated?.sound) == sound
+            }
+        }
+
+        // MARK: All
+        describe("entity field providers") {
+            it("are all different") {
+                let name: EntityProvider = .entityName
+                let image: EntityProvider = .entityImage
+                let sound: EntityProvider = .entitySound
+
+                expect(name.key) != image.key
+                expect(name.key) != sound.key
+
+                expect(image.key) != name.key
+                expect(image.key) != sound.key
+
+                expect(sound.key) != name.key
+                expect(sound.key) != image.key
             }
         }
     }
