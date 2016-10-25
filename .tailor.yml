@@ -1,0 +1,17 @@
+include:
+  - ReactiveAu3dio
+exclude:
+  - Pods
+except:
+  # extension A {
+  #     func zero() -> Int {
+  #         return 0
+  #     }
+  # }
+  - function-whitespace
+
+  # public typealias ScenarioProvider<v> = Provider<ScenarioField, v>
+  - upper-camel-case
+
+  # public enum ScenarioFieldKey { }
+  - brace-style

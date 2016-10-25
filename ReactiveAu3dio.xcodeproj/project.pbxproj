@@ -167,6 +167,7 @@
 				BAB14DDC1DBE014B006D119D /* Resources */,
 				E47C6B7F33F5393E96ABFE94 /* [CP] Copy Pods Resources */,
 				BAA390A31DBF58BA0054C0C8 /* ShellScript */,
+				57C3B67FE246FA55505BA883 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -271,6 +272,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		57C3B67FE246FA55505BA883 /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
 		};
 		902B44E705D94DA304936D81 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
