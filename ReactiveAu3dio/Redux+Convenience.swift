@@ -56,7 +56,7 @@ public func combineReducer(_ lhs: @escaping Reducer, _ rhs: @escaping Reducer) -
 /// - Parameter lhs: The reducer that will be executed first.
 /// - Parameter rhs: The reducer that takes the result of `lhs`.
 /// - Returns: The combined reducer with the same semantics.
-public func &(_ lhs: @escaping Reducer, _ rhs: @escaping Reducer) -> Reducer {
+public func & (_ lhs: @escaping Reducer, _ rhs: @escaping Reducer) -> Reducer {
     return combineReducer(lhs, rhs)
 }
 
@@ -69,7 +69,7 @@ public typealias ValidatedReducer<V: Validator, A: Action> = (Validated<V>, A) -
 ///
 /// - Parameter validatorType: The type of the `Ssi`-validator.
 /// - Parameter actionType: The type of accepted actions.
-/// - Parameter validatedReducer: A reducer that takes a validated `Ssi` and a typed action and returns a new `Ssi`.
+/// - Parameter validatedReducer: A reducer that takes validated `Ssi`s  and actions.
 /// - Returns: A reducer with the given semantics.
 public func validatedReducer<V: Validator, A: Action>(validatorOf validatorType: V.Type = V.self, actionOf actionType: A.Type = A.self, reducer: @escaping ValidatedReducer<V, A>) -> Reducer where V.WrappedType == Ssi {
     return actionReducer(reducer: { (ssi: Ssi, action: A) -> Ssi in

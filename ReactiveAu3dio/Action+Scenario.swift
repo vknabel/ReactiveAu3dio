@@ -10,17 +10,20 @@ public enum ScenarioAction: Action {
         }
     }
 
-    public static var reducer = validatedReducer(reducer: { (validated: Validated<HasScenarios>, action: ScenarioAction) -> Ssi in
-        switch action {
-        case let .append(newScenario):
-            var scenarios = validated.scenarios
-            scenarios.append(newScenario)
-            print(scenarios.count)
-            var value = validated.value
-            value.revoke(for: .scenarios)
-            value.provide(scenarios, for: .scenarios)
-            return value
-        }
+    public static var reducer = validatedReducer(
+        validatorOf: HasScenarios.self,
+        actionOf: ScenarioAction.self,
+        reducer: { validated, action in
+            switch action {
+            case let .append(newScenario):
+                var scenarios = validated.scenarios
+                scenarios.append(newScenario)
+                print(scenarios.count)
+                var value = validated.value
+                value.revoke(for: .scenarios)
+                value.provide(scenarios, for: .scenarios)
+                return value
+            }
     })
 
     public static var logger: Reducer = actionReducer { (ssi: Ssi, action: ScenarioAction) in

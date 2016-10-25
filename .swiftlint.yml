@@ -1,0 +1,12 @@
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - private_outlet
+  - vertical_whitespace
+included:
+  - ReactiveAu3dio
+excluded:
+  - Pods
+disabled_rules:
+  - line_length
+  - variable_name

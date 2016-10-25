@@ -8,6 +8,8 @@ public struct HasScenarios: Validator {
 
 public extension ValidatedType where Self.ValidatorType.WrappedType == Ssi {
     public var scenarios: [Scenario] {
+        // will only fail if ValidatorType has a bug
+        // swiftlint:disable:next force_try
         return try! value.resolving(from: .scenarios)
     }
 }
@@ -22,6 +24,8 @@ public struct ScenarioValidator: Validator {
 
 public extension ValidatedType where ValidatorType.WrappedType == Scenario {
     public var name: String {
+        // will only fail if ValidatorType has a bug
+        // swiftlint:disable:next force_try
         return try! value.resolving(from: .scenarioName)
     }
 }

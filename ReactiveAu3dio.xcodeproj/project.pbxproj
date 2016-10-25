@@ -46,7 +46,7 @@
 		BAB14DEE1DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB14E011DBE026B006D119D /* Action+Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Counter.swift"; sourceTree = "<group>"; };
 		BAB14E021DBE026B006D119D /* Action+Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Goal.swift"; sourceTree = "<group>"; };
-		BAB14E031DBE026B006D119D /* Action+Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Scenario.swift"; sourceTree = "<group>"; };
+		BAB14E031DBE026B006D119D /* Action+Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Action+Scenario.swift"; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		BAB14E061DBE026B006D119D /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
@@ -166,6 +166,7 @@
 				BAB14DDB1DBE014B006D119D /* Headers */,
 				BAB14DDC1DBE014B006D119D /* Resources */,
 				E47C6B7F33F5393E96ABFE94 /* [CP] Copy Pods Resources */,
+				BAA390A31DBF58BA0054C0C8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +301,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		BAA390A31DBF58BA0054C0C8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		C8DA17805593980381579A53 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
