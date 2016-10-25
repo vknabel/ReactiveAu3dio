@@ -10,7 +10,6 @@ import RxSwift
 import EasyInject
 import ValidatedExtension
 @testable import ReactiveAu3dio
-import RxBlocking
 import RxTest
 
 import Quick
@@ -119,7 +118,7 @@ final class ConvenienceReducerTests: QuickSpec {
         describe("validated reducer") {
             it("won't be called when invalid ssi") {
                 var executed = false
-                let validated: Reducer = validatedReducer({ (named: Validated<HasName>, action: OneAction) -> Ssi in
+                let validated: Reducer = validatedReducer(reducer: { (named: Validated<HasName>, action: OneAction) -> Ssi in
                     executed = true
                     return named.value
                 })
@@ -133,7 +132,7 @@ final class ConvenienceReducerTests: QuickSpec {
 
             it("won't be called when invalid action") {
                 var executed = false
-                let validated: Reducer = validatedReducer({ (named: Validated<HasName>, action: OneAction) -> Ssi in
+                let validated: Reducer = validatedReducer(reducer: { (named: Validated<HasName>, action: OneAction) -> Ssi in
                     executed = true
                     return named.value
                 })

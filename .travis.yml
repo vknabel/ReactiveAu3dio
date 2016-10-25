@@ -7,4 +7,4 @@ matrix:
       language: objective-c
       osx_image: xcode8
       xcode_workspace: ReactiveAu3dio.xcworkspace
-      xcode_scheme: ReactiveAu3dioTests
+      xcode_scheme: ReactiveAu3dio
