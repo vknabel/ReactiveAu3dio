@@ -22,6 +22,7 @@ fileprivate enum CurrentLevelAction: Action {
 
 final class CurrentLevelTestTests: QuickSpec {
     override func spec() {
+        // MARK: SsiHasCurrentLevel
         describe("ssi has current level") {
             it("will not validate when empty") {
                 let ssi = Ssi()
@@ -36,6 +37,7 @@ final class CurrentLevelTestTests: QuickSpec {
             }
         }
 
+        // MARK: currentLevelLens
         describe("current level lens") {
             it("doesn't return level when invalid") {
                 let ssi = Ssi()

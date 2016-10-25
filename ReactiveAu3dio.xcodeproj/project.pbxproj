@@ -30,6 +30,7 @@
 		BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E071DBE026B006D119D /* Redux+Convenience.swift */; };
 		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
 		BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */; };
+		BAD184821DBF9062007CD94E /* LevelFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Name.swift"; sourceTree = "<group>"; };
+		BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelFieldsTests.swift; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +204,7 @@
 				BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */,
 				BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */,
 				BAA390C41DBF7A690054C0C8 /* CurrentLevelTests.swift */,
+				BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -481,6 +484,7 @@
 				BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */,
 				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
 				BAA390C51DBF7A690054C0C8 /* CurrentLevelTests.swift in Sources */,
+				BAD184821DBF9062007CD94E /* LevelFieldsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +724,7 @@
 				BAA390C31DBF79C60054C0C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAB14DD81DBE014B006D119D /* Build configuration list for PBXProject "ReactiveAu3dio" */ = {
 			isa = XCConfigurationList;
