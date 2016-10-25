@@ -35,9 +35,3 @@ public enum GoalFieldKey { }
 public typealias GoalField = GenericProvidableKey<GoalFieldKey>
 public typealias Goal = StrictInjector<GoalField>
 public typealias GoalProvider<v> = Provider<GoalField, v>
-
-// MARK: Sound
-
-public struct Sound {
-
-}

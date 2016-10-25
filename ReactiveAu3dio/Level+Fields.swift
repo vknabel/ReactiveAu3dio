@@ -9,19 +9,19 @@
 import EasyInject
 
 public extension Provider {
-    public static var levelName: Provider<LevelField, String> {
+    public static var levelName: LevelProvider<String> {
         return .derive()
     }
-    public static var levelGoals: Provider<LevelField, [Goal]> {
+    public static var levelGoals: LevelProvider<[Goal]> {
         return .derive()
     }
-    public static var levelBackground: Provider<LevelField, String> {
+    public static var levelBackground: LevelProvider<String> {
         return .derive()
     }
-    public static var levelEntities: Provider<LevelField, [Entity]> {
+    public static var levelEntities: LevelProvider<[Entity]> {
         return .derive()
     }
-    public static var levelAmbients: Provider<LevelField, [Sound]> {
+    public static var levelAmbients: LevelProvider<[Sound]> {
         return .derive()
     }
 }
