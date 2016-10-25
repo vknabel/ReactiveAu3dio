@@ -31,6 +31,10 @@
 		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
 		BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */; };
 		BAD184821DBF9062007CD94E /* LevelFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */; };
+		BAD184841DBF9DBD007CD94E /* Entity+Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */; };
+		BAD184861DBF9F13007CD94E /* EntityFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */; };
+		BAD184881DBFA0D0007CD94E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184871DBFA0D0007CD94E /* Sound.swift */; };
+		BAD1848A1DBFA0F2007CD94E /* SoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184891DBFA0F2007CD94E /* SoundTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Name.swift"; sourceTree = "<group>"; };
 		BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelFieldsTests.swift; sourceTree = "<group>"; };
+		BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+Fields.swift"; sourceTree = "<group>"; };
+		BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFieldsTests.swift; sourceTree = "<group>"; };
+		BAD184871DBFA0D0007CD94E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		BAD184891DBFA0F2007CD94E /* SoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTests.swift; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,11 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				BAA390AA1DBF76890054C0C8 /* Domain.swift */,
+				BAD184871DBFA0D0007CD94E /* Sound.swift */,
 				BAB14E091DBE026B006D119D /* Scenario.swift */,
 				BAA390A61DBF6B980054C0C8 /* Scenario+Ssi.swift */,
 				BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */,
 				BAA390AC1DBF78B20054C0C8 /* Level+Current.swift */,
 				BAA390A81DBF72FB0054C0C8 /* Level+Fields.swift */,
+				BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -205,6 +215,8 @@
 				BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */,
 				BAA390C41DBF7A690054C0C8 /* CurrentLevelTests.swift */,
 				BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */,
+				BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */,
+				BAD184891DBFA0F2007CD94E /* SoundTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -463,11 +475,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD184881DBFA0D0007CD94E /* Sound.swift in Sources */,
 				BAA390AD1DBF78B20054C0C8 /* Level+Current.swift in Sources */,
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
 				BAA390AB1DBF76890054C0C8 /* Domain.swift in Sources */,
 				BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */,
 				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,
+				BAD184841DBF9DBD007CD94E /* Entity+Fields.swift in Sources */,
 				BAA390A91DBF72FB0054C0C8 /* Level+Fields.swift in Sources */,
 				BAA390A71DBF6B980054C0C8 /* Scenario+Ssi.swift in Sources */,
 				BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */,
@@ -484,7 +498,9 @@
 				BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */,
 				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
 				BAA390C51DBF7A690054C0C8 /* CurrentLevelTests.swift in Sources */,
+				BAD184861DBF9F13007CD94E /* EntityFieldsTests.swift in Sources */,
 				BAD184821DBF9062007CD94E /* LevelFieldsTests.swift in Sources */,
+				BAD1848A1DBFA0F2007CD94E /* SoundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
