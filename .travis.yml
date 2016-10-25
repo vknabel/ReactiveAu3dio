@@ -8,3 +8,5 @@ matrix:
       osx_image: xcode8
       xcode_workspace: ReactiveAu3dio.xcworkspace
       xcode_scheme: ReactiveAu3dio
+      script:
+        - xcodebuild test -workspace ReactiveAu3dio.xcworkspace -scheme ReactiveAu3dio -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
