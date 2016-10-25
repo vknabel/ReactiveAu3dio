@@ -10,6 +10,16 @@
 		17686D8C1DD72BFAE7A25115 /* Pods_ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD39BF0C616967760E09690 /* Pods_ReactiveAu3dio.framework */; };
 		743413FEA723A1E43617F835 /* Pods_ReactiveAu3dioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B90917C80FA8455BECC8C1 /* Pods_ReactiveAu3dioTests.framework */; };
 		BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */; };
+		BAA390A71DBF6B980054C0C8 /* Scenario+Ssi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390A61DBF6B980054C0C8 /* Scenario+Ssi.swift */; };
+		BAA390A91DBF72FB0054C0C8 /* Level+Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390A81DBF72FB0054C0C8 /* Level+Fields.swift */; };
+		BAA390AB1DBF76890054C0C8 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390AA1DBF76890054C0C8 /* Domain.swift */; };
+		BAA390AD1DBF78B20054C0C8 /* Level+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390AC1DBF78B20054C0C8 /* Level+Current.swift */; };
+		BAA390B51DBF79C60054C0C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390B41DBF79C60054C0C8 /* AppDelegate.swift */; };
+		BAA390B71DBF79C60054C0C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390B61DBF79C60054C0C8 /* ViewController.swift */; };
+		BAA390BA1DBF79C60054C0C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA390B81DBF79C60054C0C8 /* Main.storyboard */; };
+		BAA390BC1DBF79C60054C0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA390BB1DBF79C60054C0C8 /* Assets.xcassets */; };
+		BAA390BF1DBF79C60054C0C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA390BD1DBF79C60054C0C8 /* LaunchScreen.storyboard */; };
+		BAA390C51DBF7A690054C0C8 /* CurrentLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA390C41DBF7A690054C0C8 /* CurrentLevelTests.swift */; };
 		BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */; };
 		BAB14DE81DBE014B006D119D /* ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */; };
 		BAB14DEF1DBE014B006D119D /* ReactiveAu3dio.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,7 +29,7 @@
 		BAB14E101DBE026B006D119D /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E061DBE026B006D119D /* Redux.swift */; };
 		BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E071DBE026B006D119D /* Redux+Convenience.swift */; };
 		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
-		BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */; };
+		BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +48,18 @@
 		A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.release.xcconfig"; sourceTree = "<group>"; };
 		AAD33EC8E7804D1EA108D3C5 /* Pods-ReactiveAu3dio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.release.xcconfig"; sourceTree = "<group>"; };
 		BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		BAA390A61DBF6B980054C0C8 /* Scenario+Ssi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Ssi.swift"; sourceTree = "<group>"; };
+		BAA390A81DBF72FB0054C0C8 /* Level+Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Level+Fields.swift"; sourceTree = "<group>"; };
+		BAA390AA1DBF76890054C0C8 /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		BAA390AC1DBF78B20054C0C8 /* Level+Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Level+Current.swift"; sourceTree = "<group>"; };
+		BAA390B21DBF79C60054C0C8 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA390B41DBF79C60054C0C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BAA390B61DBF79C60054C0C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BAA390B91DBF79C60054C0C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAA390BB1DBF79C60054C0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAA390BE1DBF79C60054C0C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BAA390C01DBF79C60054C0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAA390C41DBF7A690054C0C8 /* CurrentLevelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLevelTests.swift; sourceTree = "<group>"; };
 		BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceReducerTests.swift; sourceTree = "<group>"; };
 		BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAu3dio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAu3dio.h; sourceTree = "<group>"; };
@@ -50,12 +72,19 @@
 		BAB14E061DBE026B006D119D /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
-		BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Validated.swift"; sourceTree = "<group>"; };
+		BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Name.swift"; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BAA390AF1DBF79C60054C0C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAB14DDA1DBE014B006D119D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,11 +125,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BAA390A41DBF69360054C0C8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BAA390AA1DBF76890054C0C8 /* Domain.swift */,
+				BAB14E091DBE026B006D119D /* Scenario.swift */,
+				BAA390A61DBF6B980054C0C8 /* Scenario+Ssi.swift */,
+				BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */,
+				BAA390AC1DBF78B20054C0C8 /* Level+Current.swift */,
+				BAA390A81DBF72FB0054C0C8 /* Level+Fields.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		BAA390A51DBF69460054C0C8 /* ReactiveCore */ = {
+			isa = PBXGroup;
+			children = (
+				BAB14E061DBE026B006D119D /* Redux.swift */,
+				BAB14E071DBE026B006D119D /* Redux+Convenience.swift */,
+			);
+			name = ReactiveCore;
+			sourceTree = "<group>";
+		};
+		BAA390B31DBF79C60054C0C8 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BAA390B41DBF79C60054C0C8 /* AppDelegate.swift */,
+				BAA390B61DBF79C60054C0C8 /* ViewController.swift */,
+				BAA390B81DBF79C60054C0C8 /* Main.storyboard */,
+				BAA390BB1DBF79C60054C0C8 /* Assets.xcassets */,
+				BAA390BD1DBF79C60054C0C8 /* LaunchScreen.storyboard */,
+				BAA390C01DBF79C60054C0C8 /* Info.plist */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		BAB14DD41DBE014B006D119D = {
 			isa = PBXGroup;
 			children = (
 				BAB14DE01DBE014B006D119D /* ReactiveAu3dio */,
 				BAB14DEB1DBE014B006D119D /* ReactiveAu3dioTests */,
+				BAA390B31DBF79C60054C0C8 /* Demo */,
 				BAB14DDF1DBE014B006D119D /* Products */,
 				32260CCA5C1209DE08415D6F /* Pods */,
 				205FDAAFC7B8BE355A5FF8BF /* Frameworks */,
@@ -112,6 +177,7 @@
 			children = (
 				BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */,
 				BAB14DE71DBE014B006D119D /* ReactiveAu3dioTests.xctest */,
+				BAA390B21DBF79C60054C0C8 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,13 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */,
-				BAB14E061DBE026B006D119D /* Redux.swift */,
-				BAB14E071DBE026B006D119D /* Redux+Convenience.swift */,
+				BAA390A51DBF69460054C0C8 /* ReactiveCore */,
 				BAB14E011DBE026B006D119D /* Action+Counter.swift */,
 				BAB14E021DBE026B006D119D /* Action+Goal.swift */,
 				BAB14E031DBE026B006D119D /* Action+Scenario.swift */,
-				BAB14E091DBE026B006D119D /* Scenario.swift */,
-				BAB14E0A1DBE026B006D119D /* Scenario+Validated.swift */,
+				BAA390A41DBF69360054C0C8 /* Domain */,
 				BAB14DE21DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dio;
@@ -137,6 +201,7 @@
 			children = (
 				BA9DD6C11DBE25EB00F70F0E /* StoreTests.swift */,
 				BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */,
+				BAA390C41DBF7A690054C0C8 /* CurrentLevelTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -156,6 +221,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BAA390B11DBF79C60054C0C8 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAA390C11DBF79C60054C0C8 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				BAA390AE1DBF79C60054C0C8 /* Sources */,
+				BAA390AF1DBF79C60054C0C8 /* Frameworks */,
+				BAA390B01DBF79C60054C0C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = BAA390B21DBF79C60054C0C8 /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		BAB14DDD1DBE014B006D119D /* ReactiveAu3dio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAB14DF21DBE014B006D119D /* Build configuration list for PBXNativeTarget "ReactiveAu3dio" */;
@@ -167,7 +249,6 @@
 				BAB14DDC1DBE014B006D119D /* Resources */,
 				E47C6B7F33F5393E96ABFE94 /* [CP] Copy Pods Resources */,
 				BAA390A31DBF58BA0054C0C8 /* ShellScript */,
-				57C3B67FE246FA55505BA883 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -209,6 +290,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Valentin Knabel";
 				TargetAttributes = {
+					BAA390B11DBF79C60054C0C8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LMF68UG2BU;
+						ProvisioningStyle = Automatic;
+					};
 					BAB14DDD1DBE014B006D119D = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = LMF68UG2BU;
@@ -228,6 +314,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = BAB14DD41DBE014B006D119D;
 			productRefGroup = BAB14DDF1DBE014B006D119D /* Products */;
@@ -236,11 +323,22 @@
 			targets = (
 				BAB14DDD1DBE014B006D119D /* ReactiveAu3dio */,
 				BAB14DE61DBE014B006D119D /* ReactiveAu3dioTests */,
+				BAA390B11DBF79C60054C0C8 /* Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BAA390B01DBF79C60054C0C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAA390BF1DBF79C60054C0C8 /* LaunchScreen.storyboard in Resources */,
+				BAA390BC1DBF79C60054C0C8 /* Assets.xcassets in Resources */,
+				BAA390BA1DBF79C60054C0C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAB14DDC1DBE014B006D119D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,20 +370,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		57C3B67FE246FA55505BA883 /* Tailor */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Tailor;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
 		};
 		902B44E705D94DA304936D81 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -363,13 +447,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BAA390AE1DBF79C60054C0C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAA390B71DBF79C60054C0C8 /* ViewController.swift in Sources */,
+				BAA390B51DBF79C60054C0C8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAB14DD91DBE014B006D119D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA390AD1DBF78B20054C0C8 /* Level+Current.swift in Sources */,
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
-				BAB14E141DBE026B006D119D /* Scenario+Validated.swift in Sources */,
+				BAA390AB1DBF76890054C0C8 /* Domain.swift in Sources */,
+				BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */,
 				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,
+				BAA390A91DBF72FB0054C0C8 /* Level+Fields.swift in Sources */,
+				BAA390A71DBF6B980054C0C8 /* Scenario+Ssi.swift in Sources */,
 				BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */,
 				BAB14E131DBE026B006D119D /* Scenario.swift in Sources */,
 				BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */,
@@ -383,6 +480,7 @@
 			files = (
 				BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */,
 				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
+				BAA390C51DBF7A690054C0C8 /* CurrentLevelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +494,52 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		BAA390B81DBF79C60054C0C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAA390B91DBF79C60054C0C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BAA390BD1DBF79C60054C0C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAA390BE1DBF79C60054C0C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		BAA390C21DBF79C60054C0C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LMF68UG2BU;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BAA390C31DBF79C60054C0C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LMF68UG2BU;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		BAB14DF01DBE014B006D119D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -570,6 +713,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BAA390C11DBF79C60054C0C8 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA390C21DBF79C60054C0C8 /* Debug */,
+				BAA390C31DBF79C60054C0C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BAB14DD81DBE014B006D119D /* Build configuration list for PBXProject "ReactiveAu3dio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

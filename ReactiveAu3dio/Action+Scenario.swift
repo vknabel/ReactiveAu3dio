@@ -11,7 +11,7 @@ public enum ScenarioAction: Action {
     }
 
     public static var reducer = validatedReducer(
-        validatorOf: HasScenarios.self,
+        validatorOf: SsiHasScenarios.self,
         actionOf: ScenarioAction.self,
         reducer: { validated, action in
             switch action {
