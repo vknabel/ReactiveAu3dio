@@ -34,7 +34,9 @@ final class CurrentLevelTestTests: QuickSpec {
                 let isValid = try? SsiHasCurrentLevel.validate(ssi)
                 expect(isValid) == true
             }
+        }
 
+        describe("current level lens") {
             it("doesn't return level when invalid") {
                 let ssi = Ssi()
                 let level = currentLevelLens.from(ssi)
