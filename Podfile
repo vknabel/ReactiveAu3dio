@@ -9,6 +9,7 @@ target 'ReactiveAu3dio' do
   pod 'EasyInject', '~> 1.1'
   pod 'ValidatedExtension', '~> 4.0'
   pod 'RxSwift', '~> 3.0'
+  pod 'RxCocoa', '~> 3.0'
 
   target 'ReactiveAu3dioTests' do
     inherit! :search_paths

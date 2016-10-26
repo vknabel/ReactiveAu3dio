@@ -87,31 +87,55 @@ let levelAudio = main.ssio.subscribe(
     }
 )
 
-main.next(LevelAction.start({
-    let guinea = Entity().providing("Guinea", for: .entityName)
-        .providing(Sound(file: "quiek", fileExtension: "mp3", volume: 1.0), for: .entitySound)
-        .providing("guinea.png", for: .entityImage)
-        .providing(Position(x: 0.5, y: 0.5), for: .entityPosition)
-    let level = Level().providing("My Level", for: .levelName)
-        .providing("my-background.png", for: .levelBackground)
-        .providing([guinea], for: .levelEntities)
-        .providing(Position(x: 0.25, y: 0.5), for: .levelPosition)
-    return level
-    }())
-)
+import UIKit
+import RxCocoa
 
-Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-    main.next(LevelAction.turnTo(0.375))
+
+final class ViewController: UIViewController {
+    weak var slider: UISlider! = nil
+    let bag = DisposeBag()
+
+    override func viewDidLoad() {
+        main.next(LevelAction.start({
+            let guinea = Entity().providing("Guinea", for: .entityName)
+                .providing(Sound(file: "quiek", fileExtension: "mp3", volume: 1.0), for: .entitySound)
+                .providing("guinea.png", for: .entityImage)
+                .providing(Position(x: 0.5, y: 0.5), for: .entityPosition)
+            let level = Level().providing("My Level", for: .levelName)
+                .providing("my-background.png", for: .levelBackground)
+                .providing([guinea], for: .levelEntities)
+                .providing(Position(x: 0.25, y: 0.5), for: .levelPosition)
+            return level
+            }())
+        )
+
+        let subscription = slider.rx.value.asObservable()
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                main.next(LevelAction.turnTo(value))
+            })
+        bag.insert(subscription)
+    }
+
+    override func loadView() {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+
+        let slider = UISlider()
+        slider.minimumValue = 0.0
+        slider.maximumValue = 1.0
+        view.addSubview(slider)
+        self.slider = slider
+
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            slider.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0),
+            slider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
+            slider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0)
+        ])
+
+        self.view = view
+    }
 }
-Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-    main.next(LevelAction.turnTo(0.5))
-}
-Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
-    main.next(LevelAction.turnTo(0.625))
-}
-Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { (timer) in
-    main.next(LevelAction.turnTo(0.75))
-}
-Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (timer) in
-    main.completed()
-}
+
+PlaygroundPage.current.liveView = ViewController()
