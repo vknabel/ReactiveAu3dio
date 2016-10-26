@@ -8,6 +8,8 @@
 
 import EasyInject
 
+public typealias Position = (x: Float, y: Float)
+
 public extension Provider {
     public static var entityName: EntityProvider<String> {
         return .derive()
@@ -16,6 +18,9 @@ public extension Provider {
         return .derive()
     }
     public static var entitySound: EntityProvider<Sound> {
+        return .derive()
+    }
+    public static var entityPosition: EntityProvider<Position> {
         return .derive()
     }
 }
@@ -56,7 +61,7 @@ public extension ValidatedType where ValidatorType == EntityHasImage {
 }
 public typealias EntityWithImage = Validated<EntityHasImage>
 
-// MARK: Name
+// MARK: Sound
 
 public struct EntityHasSound: Validator {
     public static func validate(_ value: Entity) throws -> Bool {
@@ -72,3 +77,20 @@ public extension ValidatedType where ValidatorType == EntityHasSound {
     }
 }
 public typealias EntityWithSound = Validated<EntityHasSound>
+
+// MARK: Position
+
+public struct EntityHasPosition: Validator {
+    public static func validate(_ value: Entity) throws -> Bool {
+        _ = try value.resolving(from: .entityPosition)
+        return true
+    }
+}
+public extension ValidatedType where ValidatorType == EntityHasPosition {
+    public var position: Position {
+        // will only fail if ValidatorType has a bug
+        // swiftlint:disable:next force_try
+        return try! value.resolving(from: .entityPosition)
+    }
+}
+public typealias EntityWithPosition = Validated<EntityHasPosition>

@@ -7,7 +7,7 @@ public let ssioObserver = AnyObserver<Ssi> { event in
     switch event {
     case let .next(ssi):
         let elements = ssi.providedKeys
-            .flatMap({ (key: RootElements) -> (key: String, value: Providable)? in
+            .flatMap({ (key: SsiElements) -> (key: String, value: Providable)? in
                 guard let value = try? ssi.resolving(key: key) else { return nil }
                 return (key: key.name, value: value)
             })
