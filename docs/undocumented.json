@@ -71,6 +71,55 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 11,
+      "symbol": "AudioEntity",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 12,
+      "symbol": "AudioEntity.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 13,
+      "symbol": "AudioEntity.pan",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 14,
+      "symbol": "AudioEntity.volume",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 16,
+      "symbol": "AudioEntity.fromLevel(level:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 25,
+      "symbol": "AudioEntity.fromEntity(viewCenter:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/AudioEntity.swift",
+      "line": 44,
+      "symbol": "AudioEntity.apply(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Domain.swift",
       "line": 13,
       "symbol": "ScenarioFieldKey",
@@ -121,43 +170,64 @@
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 27,
+      "line": 21,
+      "symbol": "Provider.entityPosition",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
+      "line": 30,
       "symbol": "EntityHasName",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 34,
+      "line": 37,
       "symbol": "ValidatedType.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 44,
+      "line": 47,
       "symbol": "EntityHasImage",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 51,
+      "line": 54,
       "symbol": "ValidatedType.image",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 61,
+      "line": 64,
       "symbol": "EntityHasSound",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
-      "line": 68,
+      "line": 71,
       "symbol": "ValidatedType.sound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
+      "line": 81,
+      "symbol": "EntityHasPosition",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Entity+Fields.swift",
+      "line": 88,
+      "symbol": "ValidatedType.position",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -226,72 +296,142 @@
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 33,
+      "line": 27,
+      "symbol": "Provider.levelPosition",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
+      "line": 36,
       "symbol": "LevelHasName",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 40,
+      "line": 43,
       "symbol": "ValidatedType.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 49,
+      "line": 52,
       "symbol": "LevelHasGoals",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 56,
+      "line": 59,
       "symbol": "ValidatedType.goals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 66,
+      "line": 69,
       "symbol": "LevelHasBackground",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 73,
+      "line": 76,
       "symbol": "ValidatedType.background",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 83,
+      "line": 86,
       "symbol": "LevelHasEntities",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 90,
+      "line": 93,
       "symbol": "ValidatedType.entities",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 100,
+      "line": 103,
       "symbol": "LevelHasAmbients",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
-      "line": 107,
+      "line": 110,
       "symbol": "ValidatedType.ambients",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
+      "line": 120,
+      "symbol": "LevelHasPosition",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Level+Fields.swift",
+      "line": 127,
+      "symbol": "ValidatedType.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": null,
+      "symbol": "Position",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 9,
+      "symbol": "Position",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 12,
+      "symbol": "Position.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 13,
+      "symbol": "Position.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 15,
+      "symbol": "Position.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 41,
+      "symbol": "Position.horizontalDirection(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Position.swift",
+      "line": 45,
+      "symbol": "Position.verticalDirection(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -353,14 +493,21 @@
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Sound.swift",
       "line": 11,
+      "symbol": "Sound.fileExtension",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Sound.swift",
+      "line": 12,
       "symbol": "Sound.volume",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/vknabel/Developer/vknabel/ReactiveAu3dio/ReactiveAu3dio/Sound.swift",
-      "line": 13,
-      "symbol": "Sound.init(file:volume:)",
+      "line": 14,
+      "symbol": "Sound.init(file:fileExtension:volume:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }

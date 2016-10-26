@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LevelHasEntities Struct Reference</title>
+    <title>Position Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -11,9 +11,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Struct/LevelHasEntities" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/Position" class="dashAnchor"></a>
 
-    <a title="LevelHasEntities Struct Reference"></a>
+    <a title="Position Struct Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -41,7 +41,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ReactiveAu3dio Reference</a>
       <img class="carat" src="../img/carat.png" />
-      LevelHasEntities Struct Reference
+      Position Struct Reference
     </p>
 
     <div class="content-wrapper">
@@ -235,7 +235,7 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>LevelHasEntities</h1>
+            <h1>Position</h1>
             <p>Undocumented</p>
 
           </div>
@@ -248,9 +248,66 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFP18ValidatedExtension9Validator8validateFzwx11WrappedTypeSb"></a>
-                    <a name="//apple_ref/swift/Method/validate(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFP18ValidatedExtension9Validator8validateFzwx11WrappedTypeSb">validate(_:)</a>
+                    <a name="/s:vV14ReactiveAu3dio8Position1xSf"></a>
+                    <a name="//apple_ref/swift/Property/x" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14ReactiveAu3dio8Position1xSf">x</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14ReactiveAu3dio8Position1ySf"></a>
+                    <a name="//apple_ref/swift/Property/y" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14ReactiveAu3dio8Position1ySf">y</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14ReactiveAu3dio8PositioncFT1xSf1ySf_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(x:y:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14ReactiveAu3dio8PositioncFT1xSf1ySf_S0_">init(x:y:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFPs9Equatableoi2eeFTxx_Sb"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFPs9Equatableoi2eeFTxx_Sb">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,7 +321,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validate</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Level</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Position</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Position</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -275,12 +332,25 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>validate</em>
+                                <em>lhs</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An instance of the <code>WrappedType</code></p>
+                                  <p>A value to compare.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Another value to compare.</p>
 
                                 </div>
                               </td>
@@ -288,9 +358,46 @@
                           </tbody>
                         </table>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A <code>Bool</code> indicating success(<code>true</code>)/failure(<code>false</code>) of the validation</p>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14ReactiveAu3dio8Position19horizontalDirectionFT2toS0__Sf"></a>
+                    <a name="//apple_ref/swift/Method/horizontalDirection(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14ReactiveAu3dio8Position19horizontalDirectionFT2toS0__Sf">horizontalDirection(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14ReactiveAu3dio8Position17verticalDirectionFT2toS0__Sf"></a>
+                    <a name="//apple_ref/swift/Method/verticalDirection(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14ReactiveAu3dio8Position17verticalDirectionFT2toS0__Sf">verticalDirection(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
 
                       </div>
                     </section>
