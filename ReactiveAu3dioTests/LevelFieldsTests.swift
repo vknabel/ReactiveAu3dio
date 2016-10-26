@@ -197,6 +197,42 @@ final class LevelFieldsTests: QuickSpec {
             }
         }
 
+        // MARK: Position
+        describe("level position provider") {
+            it("is deterministic") {
+                let firstProvider: LevelProvider = .levelPosition
+                let secondProvider: LevelProvider = .levelPosition
+                expect(firstProvider.key) == secondProvider.key
+            }
+        }
+
+        describe("level has position validator") {
+            it("will not validate when empty") {
+                let level = Level()
+                let isValid = try? LevelHasPosition.validate(level)
+                expect(isValid).to(beFalsy())
+            }
+
+            it("will validate when set") {
+                let level = Level().providing(Position(x: 0.5, y: 0.1), for: .levelPosition)
+                let isValid = try? LevelHasPosition.validate(level)
+                expect(isValid) == true
+            }
+        }
+
+        describe("level with position") {
+            it("can't be constructed when invalid") {
+                let level = Level()
+                let validated = LevelWithPosition(value: level)
+                expect(validated?.position).to(beNil())
+            }
+            it("allows to access the field when valid") {
+                let level = Level().providing(Position(x: 0.5, y: 0.1), for: .levelPosition)
+                let validated = LevelWithPosition(value: level)
+                expect(validated?.position) == Position(x: 0.5, y: 0.1)
+            }
+        }
+
         // MARK: All
         describe("level field providers") {
             it("are all different") {
@@ -205,31 +241,43 @@ final class LevelFieldsTests: QuickSpec {
                 let background: LevelProvider = .levelBackground
                 let entities: LevelProvider = .levelEntities
                 let ambients: LevelProvider = .levelAmbients
+                let position: LevelProvider = .levelPosition
 
                 expect(name.key) != goals.key
                 expect(name.key) != background.key
                 expect(name.key) != entities.key
                 expect(name.key) != ambients.key
+                expect(name.key) != position.key
 
                 expect(goals.key) != name.key
                 expect(goals.key) != background.key
                 expect(goals.key) != entities.key
                 expect(goals.key) != ambients.key
+                expect(goals.key) != position.key
 
                 expect(background.key) != name.key
                 expect(background.key) != goals.key
                 expect(background.key) != entities.key
                 expect(background.key) != ambients.key
+                expect(background.key) != position.key
 
                 expect(entities.key) != name.key
                 expect(entities.key) != goals.key
                 expect(entities.key) != background.key
                 expect(entities.key) != ambients.key
+                expect(entities.key) != position.key
 
                 expect(ambients.key) != name.key
                 expect(ambients.key) != goals.key
                 expect(ambients.key) != background.key
                 expect(ambients.key) != entities.key
+                expect(ambients.key) != position.key
+
+                expect(position.key) != name.key
+                expect(position.key) != goals.key
+                expect(position.key) != background.key
+                expect(position.key) != entities.key
+                expect(position.key) != ambients.key
             }
         }
     }

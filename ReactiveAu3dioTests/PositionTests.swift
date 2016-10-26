@@ -13,6 +13,47 @@ import Nimble
 
 final class PositionTests: QuickSpec {
     override func spec() {
+        describe("position declaration") {
+            it("initializer with too big coordinates") {
+                let position = Position(x: 1.5, y: 3)
+                expect(position.x) == 0.5
+                expect(position.y) == 0.0
+            }
+
+            it("initializer with negative coordinates") {
+                let position = Position(x: -1.25, y: -3)
+                expect(position.x) == 0.25
+                expect(position.y) == 0.0
+            }
+            
+            it("Equatable") {
+                let west = Position(x: 0.0, y: 0.0)
+                let north = Position(x: 0.25, y: 0.25)
+                let east = Position(x: 0.5, y: 0.0)
+                let south = Position(x: 0.25, y: 0.5)
+
+                expect(west) == west
+                expect(west) != north
+                expect(west) != east
+                expect(west) != south
+
+                expect(north) != west
+                expect(north) == north
+                expect(north) != east
+                expect(north) != south
+
+                expect(east) != west
+                expect(east) != north
+                expect(east) == east
+                expect(east) != south
+
+                expect(south) != west
+                expect(south) != north
+                expect(south) != east
+                expect(south) == south
+            }
+        }
+
         describe("directions between positions") {
             it("shall return the right horizontal direction") {
                 let west = Position(x: 0.0, y: 0.0)
@@ -20,12 +61,12 @@ final class PositionTests: QuickSpec {
                 let east = Position(x: 0.5, y: 0.0)
                 let south = Position(x: 0.75, y: 0.0)
 
-                let left = -1.0
-                let center = 0.0
-                let right = 1.0
-                let behind = center
+                let left: Float = -1.0
+                let center: Float = 0.0
+                let right: Float = 1.0
+                let behind: Float = center
 
-                func dir(_ lhs: Position, _ rhs: Position) -> Expectation<Double> {
+                func dir(_ lhs: Position, _ rhs: Position) -> Expectation<Float> {
                     return expect(lhs.horizontalDirection(to: rhs))
                 }
 
@@ -56,12 +97,12 @@ final class PositionTests: QuickSpec {
                 let east = Position(x: 0.5, y: 0.0)
                 let south = Position(x: 0.75, y: 0.0)
 
-                let left = -1.0
-                let center = 0.0
-                let right = 1.0
-                let behind = center
+                let left: Float = -1.0
+                let center: Float = 0.0
+                let right: Float = 1.0
+                let behind: Float = center
 
-                func dir(_ lhs: Position, _ rhs: Position) -> Expectation<Double> {
+                func dir(_ lhs: Position, _ rhs: Position) -> Expectation<Float> {
                     return expect(lhs.verticalDirection(to: rhs))
                 }
 

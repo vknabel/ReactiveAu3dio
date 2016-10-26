@@ -125,6 +125,7 @@ public struct LevelHasPosition: Validator {
 }
 public extension ValidatedType where ValidatorType == LevelHasPosition {
     public var position: Position {
+
         // will only fail if ValidatorType has a bug
         // swiftlint:disable:next force_try
         return try! value.resolving(from: .levelPosition)
