@@ -9,7 +9,6 @@
 public struct Position: Equatable {
     public typealias Coordinate = Float
 
-    /// Max 1.0 and min -1.0
     public var x: Coordinate
     public var y: Coordinate
 

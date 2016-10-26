@@ -43,7 +43,6 @@ public struct AudioEntity {
 
     public func apply(to player: AVAudioPlayer?) throws -> AVAudioPlayer {
         let player = try player ?? AVAudioPlayer(contentsOf: url)
-        player.isMeteringEnabled = true
         player.pan = pan
         player.volume = volume
         return player
