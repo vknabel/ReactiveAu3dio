@@ -24,6 +24,9 @@ public extension Provider {
     public static var levelAmbients: LevelProvider<[Sound]> {
         return .derive()
     }
+    public static var levelPosition: LevelProvider<Position> {
+        return .derive()
+    }
 }
 
 import ValidatedExtension
@@ -111,3 +114,20 @@ public extension ValidatedType where ValidatorType == LevelHasAmbients {
     }
 }
 public typealias LevelWithAmbients = Validated<LevelHasAmbients>
+
+// MARK: Position
+
+public struct LevelHasPosition: Validator {
+    public static func validate(_ value: Level) throws -> Bool {
+        _ = try value.resolving(from: .levelPosition)
+        return true
+    }
+}
+public extension ValidatedType where ValidatorType == LevelHasPosition {
+    public var position: Position {
+        // will only fail if ValidatorType has a bug
+        // swiftlint:disable:next force_try
+        return try! value.resolving(from: .levelPosition)
+    }
+}
+public typealias LevelWithPosition = Validated<LevelHasPosition>

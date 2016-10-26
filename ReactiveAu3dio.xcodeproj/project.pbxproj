@@ -35,6 +35,8 @@
 		BAD184861DBF9F13007CD94E /* EntityFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */; };
 		BAD184881DBFA0D0007CD94E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184871DBFA0D0007CD94E /* Sound.swift */; };
 		BAD1848A1DBFA0F2007CD94E /* SoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184891DBFA0F2007CD94E /* SoundTests.swift */; };
+		BAD1848C1DC0F944007CD94E /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD1848B1DC0F944007CD94E /* Position.swift */; };
+		BAD1848E1DC11361007CD94E /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD1848D1DC11361007CD94E /* PositionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFieldsTests.swift; sourceTree = "<group>"; };
 		BAD184871DBFA0D0007CD94E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		BAD184891DBFA0F2007CD94E /* SoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTests.swift; sourceTree = "<group>"; };
+		BAD1848B1DC0F944007CD94E /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		BAD1848D1DC11361007CD94E /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +150,7 @@
 				BAA390AC1DBF78B20054C0C8 /* Level+Current.swift */,
 				BAA390A81DBF72FB0054C0C8 /* Level+Fields.swift */,
 				BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */,
+				BAD1848B1DC0F944007CD94E /* Position.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */,
 				BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */,
 				BAD184891DBFA0F2007CD94E /* SoundTests.swift */,
+				BAD1848D1DC11361007CD94E /* PositionTests.swift */,
 				BAB14DEE1DBE014B006D119D /* Info.plist */,
 			);
 			path = ReactiveAu3dioTests;
@@ -475,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD1848C1DC0F944007CD94E /* Position.swift in Sources */,
 				BAD184881DBFA0D0007CD94E /* Sound.swift in Sources */,
 				BAA390AD1DBF78B20054C0C8 /* Level+Current.swift in Sources */,
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
@@ -496,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */,
+				BAD1848E1DC11361007CD94E /* PositionTests.swift in Sources */,
 				BA9DD6C21DBE25EB00F70F0E /* StoreTests.swift in Sources */,
 				BAA390C51DBF7A690054C0C8 /* CurrentLevelTests.swift in Sources */,
 				BAD184861DBF9F13007CD94E /* EntityFieldsTests.swift in Sources */,

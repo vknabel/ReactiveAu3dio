@@ -14,9 +14,29 @@ import Nimble
 final class SoundTests: QuickSpec {
     override func spec() {
         describe("sound") {
-            it("passes parameters when initialized") {
+            it("passes file when initialized") {
+                let sound = Sound(file: "my file")
+                expect(sound.file) == "my file"
+                expect(sound.fileExtension).to(beNil())
+            }
+
+            it("passes file with extension when initialized") {
+                let sound = Sound(file: "my file", fileExtension: "mp3")
+                expect(sound.file) == "my file"
+                expect(sound.fileExtension) == "mp3"
+            }
+
+            it("passes file and volume when initialized") {
                 let sound = Sound(file: "my file", volume: 0.33)
                 expect(sound.file) == "my file"
+                expect(sound.fileExtension).to(beNil())
+                expect(sound.volume) == 0.33
+            }
+
+            it("passes file, extension and volume when initialized") {
+                let sound = Sound(file: "my file", fileExtension: "mp3", volume: 0.33)
+                expect(sound.file) == "my file"
+                expect(sound.fileExtension) == "mp3"
                 expect(sound.volume) == 0.33
             }
 

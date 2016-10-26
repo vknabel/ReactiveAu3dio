@@ -144,7 +144,7 @@ final class EntityFieldsTests: QuickSpec {
             }
 
             it("will validate when set") {
-                let position: Position = (0.5, 0.5)
+                let position = Position(x: 0.3, y: 0.5)
                 let entity = Entity().providing(position, for: .entityPosition)
                 let isValid = try? EntityHasPosition.validate(entity)
                 expect(isValid) == true
@@ -158,7 +158,7 @@ final class EntityFieldsTests: QuickSpec {
                 expect(validated?.position).to(beNil())
             }
             it("allows to access the field when valid") {
-                let position: Position = (0.5, 0.5)
+                let position: Position = Position(x: 0.3, y: 0.5)
                 let entity = Entity().providing(position, for: .entityPosition)
                 let validated = EntityWithPosition(value: entity)
                 expect(validated?.position.x) == position.x

@@ -8,8 +8,6 @@
 
 import EasyInject
 
-public typealias Position = (x: Float, y: Float)
-
 public extension Provider {
     public static var entityName: EntityProvider<String> {
         return .derive()
