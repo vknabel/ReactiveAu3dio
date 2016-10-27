@@ -47,46 +47,6 @@ let main = Store(
 
 //let disposable = main.ssio.subscribe()
 
-import AVFoundation
-
-var players = [URL: AVAudioPlayer]()
-let levelAudio = main.ssio.subscribe(
-    onNext: { ssi in
-        guard let currentLevel = SsiWithCurrentLevel(value: ssi)?.currentLevel else { return }
-        let audioEntities = AudioEntity.fromLevel(level: currentLevel)
-        var nextPlayers = [URL: AVAudioPlayer]()
-        for audio in audioEntities {
-            nextPlayers[audio.url] = try? audio.apply(to: players[audio.url])
-        }
-        let nextURLs = Set(nextPlayers.keys)
-        let previousURLs = Set(players.keys)
-
-        for removedKey in previousURLs.subtracting(nextURLs) {
-            players[removedKey]?.stop()
-        }
-
-        for addedKey in nextURLs.subtracting(previousURLs) {
-            nextPlayers[addedKey]?.play()
-        }
-
-        players = nextPlayers
-    },
-    onError: { error in
-
-    },
-    onCompleted: { 
-        for (_, p) in players {
-            p.stop()
-        }
-        players = [:]
-
-        PlaygroundPage.current.finishExecution()
-    },
-    onDisposed: {
-
-    }
-)
-
 import UIKit
 import RxCocoa
 
@@ -96,25 +56,30 @@ final class ViewController: UIViewController {
     let bag = DisposeBag()
 
     override func viewDidLoad() {
+        main.levelAudioPlayback
+            .subscribe(onCompleted: { PlaygroundPage.current.finishExecution() })
+            .addDisposableTo(bag)
+
+        slider.rx.value.asObservable()
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                main.next(LevelAction.turnTo(value))
+            })
+            .addDisposableTo(bag)
+
         main.next(LevelAction.start({
             let guinea = Entity().providing("Guinea", for: .entityName)
-                .providing(Sound(file: "quiek", fileExtension: "mp3", volume: 1.0), for: .entitySound)
+                .providing(Sound(file: "quiek", fileExtension: "mp3", volume: 0.5), for: .entitySound)
                 .providing("guinea.png", for: .entityImage)
                 .providing(Position(x: 0.5, y: 0.5), for: .entityPosition)
             let level = Level().providing("My Level", for: .levelName)
                 .providing("my-background.png", for: .levelBackground)
                 .providing([guinea], for: .levelEntities)
                 .providing(Position(x: 0.25, y: 0.5), for: .levelPosition)
+                .providing([Sound(file: "rain-light", fileExtension: "mp3", volume: 1.0)], for: .levelAmbients)
             return level
             }())
         )
-
-        let subscription = slider.rx.value.asObservable()
-            .distinctUntilChanged()
-            .subscribe(onNext: { value in
-                main.next(LevelAction.turnTo(value))
-            })
-        bag.insert(subscription)
     }
 
     override func loadView() {

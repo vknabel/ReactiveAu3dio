@@ -30,6 +30,7 @@
 		BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E071DBE026B006D119D /* Redux+Convenience.swift */; };
 		BAB14E131DBE026B006D119D /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E091DBE026B006D119D /* Scenario.swift */; };
 		BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */; };
+		BACAF8201DC24DF6007AD671 /* AudioPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAF81F1DC24DF6007AD671 /* AudioPlayback.swift */; };
 		BAD184821DBF9062007CD94E /* LevelFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */; };
 		BAD184841DBF9DBD007CD94E /* Entity+Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */; };
 		BAD184861DBF9F13007CD94E /* EntityFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */; };
@@ -82,6 +83,7 @@
 		BAB14E071DBE026B006D119D /* Redux+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Redux+Convenience.swift"; sourceTree = "<group>"; };
 		BAB14E091DBE026B006D119D /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		BAB14E0A1DBE026B006D119D /* Scenario+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scenario+Name.swift"; sourceTree = "<group>"; };
+		BACAF81F1DC24DF6007AD671 /* AudioPlayback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayback.swift; sourceTree = "<group>"; };
 		BAD184811DBF9062007CD94E /* LevelFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelFieldsTests.swift; sourceTree = "<group>"; };
 		BAD184831DBF9DBD007CD94E /* Entity+Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+Fields.swift"; sourceTree = "<group>"; };
 		BAD184851DBF9F13007CD94E /* EntityFieldsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityFieldsTests.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD184901DC1349A007CD94E /* AudioEntity.swift */,
+				BACAF81F1DC24DF6007AD671 /* AudioPlayback.swift */,
 			);
 			name = Platform;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
 				BAA390AB1DBF76890054C0C8 /* Domain.swift in Sources */,
 				BAB14E141DBE026B006D119D /* Scenario+Name.swift in Sources */,
+				BACAF8201DC24DF6007AD671 /* AudioPlayback.swift in Sources */,
 				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,
 				BAD184841DBF9DBD007CD94E /* Entity+Fields.swift in Sources */,
 				BAA390A91DBF72FB0054C0C8 /* Level+Fields.swift in Sources */,
