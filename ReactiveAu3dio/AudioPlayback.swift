@@ -62,7 +62,6 @@ extension Store {
         }
     }
 
-
     public var ambientAudios: Observable<[AudioEntity]> {
         return ssio.map { ssi -> [AudioEntity] in
             guard let currentLevel = SsiWithCurrentLevel(value: ssi)?.currentLevel,
