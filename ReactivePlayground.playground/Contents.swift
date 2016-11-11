@@ -9,6 +9,8 @@ import EasyInject
 import ValidatedExtension
 import ReactiveAu3dio
 
+//: Set up all Actions
+
 enum LevelAction: Action {
     case start(Level)
     case moveTo(Position)
@@ -38,6 +40,8 @@ enum LevelAction: Action {
     })
 }
 
+//: Set up the store (all reducers must be included)
+
 let main = Store(
     initial: Observable.just(Ssi()),
     reducers: [
@@ -45,7 +49,7 @@ let main = Store(
     ]
 )
 
-//let disposable = main.ssio.subscribe()
+//: Display view
 
 import UIKit
 import RxCocoa
@@ -53,13 +57,16 @@ import RxCocoa
 
 final class ViewController: UIViewController {
     weak var slider: UISlider! = nil
+    /// Will be disposed when view controller will be deallocated
     let bag = DisposeBag()
 
     override func viewDidLoad() {
+        // Start audio playback
         main.levelAudioPlayback
             .subscribe(onCompleted: { PlaygroundPage.current.finishExecution() })
             .addDisposableTo(bag)
 
+        // bind slider to position of player
         slider.rx.value.asObservable()
             .distinctUntilChanged()
             .subscribe(onNext: { value in
@@ -67,6 +74,8 @@ final class ViewController: UIViewController {
             })
             .addDisposableTo(bag)
 
+        // Load default data
+        // Won't be required in actual app
         main.next(LevelAction.start({
             let guinea = Entity().providing("Guinea", for: .entityName)
                 .providing(Sound(file: "quiek", fileExtension: "mp3", volume: 0.5), for: .entitySound)
