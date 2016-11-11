@@ -13,6 +13,6 @@ matrix:
 install:
   - ./Scripts/install-swiftlint.sh
   - gem install cocoapods
+  - pod install
 script:
   - swiftlint
-  - pod install
