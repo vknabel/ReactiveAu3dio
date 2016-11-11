@@ -48,12 +48,7 @@ final class AudioEntityTests: QuickSpec {
 
             it("creates audio players when none is given") {
                 let audio = AudioEntity(url: URL(string: "file:///")!, pan: 2.0, volume: 1.0)
-                do {
-                    _ = try audio.apply(to: nil)
-                } catch let error as NSError {
-                    expect(error.code) == 2003334207
-                    expect(error.domain) == NSOSStatusErrorDomain
-                }
+                expect(audio.apply(to: nil)).to(beNil())
             }
         }
     }

@@ -49,8 +49,10 @@ public struct AudioEntity: Hashable {
         return AudioEntity(url: url, pan: 0.0, volume: sound.volume)
     }
 
-    public func apply(to player: AVAudioPlayer?) throws -> AVAudioPlayer {
-        let player = try player ?? AVAudioPlayer(contentsOf: url)
+    public func apply(to player: AVAudioPlayer?) -> AVAudioPlayer? {
+        guard let player = try? (player ?? AVAudioPlayer(contentsOf: url)) else {
+            return nil
+        }
         player.pan = pan
         player.volume = volume
         player.numberOfLoops = -1

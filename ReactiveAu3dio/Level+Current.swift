@@ -32,6 +32,8 @@ public extension ValidatedType where Self.ValidatorType == SsiHasCurrentLevel {
     }
 }
 
+import RxLens
+
 public let currentLevelLens = Lens(
     from: { (ssi: Ssi) -> Level? in
         guard let ssi = SsiWithCurrentLevel(value: ssi) else { return nil }

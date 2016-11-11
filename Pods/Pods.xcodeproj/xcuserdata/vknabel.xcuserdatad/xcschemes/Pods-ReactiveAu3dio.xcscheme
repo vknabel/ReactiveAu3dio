@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCC5F0018B9A755D5AA69FCFEDE3F61E"
+               BlueprintIdentifier = "24AF0B063E6F0B3282AC1F75C2B36FBB"
                BuildableName = "Pods_ReactiveAu3dio.framework"
                BlueprintName = "Pods-ReactiveAu3dio"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCC5F0018B9A755D5AA69FCFEDE3F61E"
+            BlueprintIdentifier = "24AF0B063E6F0B3282AC1F75C2B36FBB"
             BuildableName = "Pods_ReactiveAu3dio.framework"
             BlueprintName = "Pods-ReactiveAu3dio"
             ReferencedContainer = "container:Pods.xcodeproj">

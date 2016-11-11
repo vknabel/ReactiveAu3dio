@@ -6,6 +6,8 @@ PODS:
     - RxSwift (~> 3.0)
   - RxCocoa (3.0.0):
     - RxSwift (~> 3.0)
+  - RxLens (0.1.0):
+    - RxSwift (~> 3.0)
   - RxSwift (3.0.0)
   - RxTest (3.0.0):
     - RxSwift (~> 3.0)
@@ -17,6 +19,7 @@ DEPENDENCIES:
   - Quick (~> 0.10)
   - RxBlocking (~> 3.0)
   - RxCocoa (~> 3.0)
+  - RxLens (~> 0.1)
   - RxSwift (~> 3.0)
   - RxTest (~> 3.0)
   - ValidatedExtension (~> 4.0)
@@ -27,10 +30,11 @@ SPEC CHECKSUMS:
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   RxBlocking: 0132c660340d8b8f34b65b2e099167ea6134eecf
   RxCocoa: 0a2f3ae381cf16f4021a4cee7a4420f83058a965
+  RxLens: eee03120d7abd19b5d018600865522f934e9d48d
   RxSwift: a930cd662f5b4a7ca9dc3518585dba91dadf497c
   RxTest: 770511db5d602b618ee8c8a7c06b4b71f9168f7c
   ValidatedExtension: ba09808c5df718754a4cbf4675d305139a5992e2
 
-PODFILE CHECKSUM: bbef2ae5a8cf33d6e1ed251bff0e55db1b737f40
+PODFILE CHECKSUM: b206e61899e123bab409e7a77574c98007907eb1
 
 COCOAPODS: 1.1.1
