@@ -1,0 +1,6 @@
+framework module EasyInject {
+  umbrella header "EasyInject-umbrella.h"
+
+  export *
+  module * { export * }
+}

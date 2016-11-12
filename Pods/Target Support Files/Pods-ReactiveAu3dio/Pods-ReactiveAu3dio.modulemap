@@ -1,0 +1,6 @@
+framework module Pods_ReactiveAu3dio {
+  umbrella header "Pods-ReactiveAu3dio-umbrella.h"
+
+  export *
+  module * { export * }
+}
