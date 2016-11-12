@@ -746,7 +746,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = LMF68UG2BU;
 				INFOPLIST_FILE = ReactiveAu3dioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -760,7 +760,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A62809EEEBAA87AFE96A66C1 /* Pods-ReactiveAu3dioTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = LMF68UG2BU;
 				INFOPLIST_FILE = ReactiveAu3dioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
