@@ -224,10 +224,12 @@ struct DisplayEntity {
     }
 }
 
+typealias EntityView = UIImageView
+
 extension DisplayEntity {
     /// Assumes that image will never change for performance reasons
-    func apply(to view: UIImageView?) -> UIImageView? {
-        let view = view ?? UIImageView(image: UIImage(named: image))
+    func apply(to view: EntityView?) -> EntityView? {
+        let view = view ?? EntityView(image: UIImage(named: image))
         return view
     }
 
@@ -241,16 +243,56 @@ extension DisplayEntity {
     }
 }
 
-typealias EntityView = UIImageView
-
 extension DisplayEntity {
-    static func translation(in view: UIView) -> DataToReferenceTranslator<String, DisplayEntity, EntityView> {
-        return DataToReferenceTranslator<String, DisplayEntity, EntityView>(
-            indexFromData: { $0.name },
-            applyToReference: DisplayEntity.apply,
-            performReferenceChanges: { changes in
-                changes.removed.forEach { $0.removeFromSuperview() }
-                changes.added.forEach { view.addSubview($0) }
+    static func translation(in rootView: UIView) -> ValueToObjectTranslator<String, DisplayEntity, EntityView> {
+        return ValueToObjectTranslator<String, DisplayEntity, EntityView>(
+            indexOfValue: { $0.name },
+            updateObjectWithValue: DisplayEntity.apply,
+            performChanges: { changes, translated in
+                // TODO: performChanges needs to be refactored and split into smaller chunks 
+
+                func objectsOf(_ set: Set<String>) -> [EntityView] {
+                    return set.flatMap { translated[$0]?.object }
+                }
+                // Update superviews
+                objectsOf(changes.removed).forEach { $0.removeFromSuperview() }
+                objectsOf(changes.added).forEach { rootView.addSubview($0) }
+
+                // Apply constraints
+                for index in changes.current {
+                    guard let (value, view) = translated[index] else {
+                        fatalError()
+                    }
+                    func updateConstraint(for coordinate: CGFloat, first firstAttribute: NSLayoutAttribute, second secondAttribute: NSLayoutAttribute) {
+                        let constraint = view.constraints.first(where: { constraint in
+                            constraint.firstItem === view
+                                && constraint.firstAttribute == .centerX
+                                && constraint.relation == .equal
+                                && constraint.secondItem === rootView
+                                && constraint.secondAttribute == .width
+                                && constraint.relation == .equal
+                                && constraint.constant == 0.0
+                        })
+                        if constraint?.multiplier != CGFloat(value.position.x) {
+                            _ = constraint.map(rootView.removeConstraint)
+                            let newConstraint = NSLayoutConstraint(
+                                item: view,
+                                attribute: NSLayoutAttribute.centerX,
+                                relatedBy: NSLayoutRelation.equal,
+                                toItem: rootView,
+                                attribute: NSLayoutAttribute.width,
+                                multiplier: CGFloat(value.position.x),
+                                constant: 0.0
+                            )
+                            NSLayoutConstraint.activate([newConstraint])
+                        }
+                    }
+
+                    updateConstraint(for: CGFloat(value.position.x), first: .centerX, second: .width)
+                    updateConstraint(for: CGFloat(value.position.y), first: .centerY, second: .height)
+                    updateConstraint(for: 0.3, first: .width, second: .width)
+                    updateConstraint(for: 0.3, first: .height, second: .height)
+                }
             }
         )
     }

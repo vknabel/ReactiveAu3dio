@@ -10,11 +10,11 @@ import RxSwift
 import AVFoundation
 
 public extension AudioEntity {
-    public static var translation: DataToReferenceTranslator<URL, AudioEntity, AVAudioPlayer> {
-        return DataToReferenceTranslator<URL, AudioEntity, AVAudioPlayer>(
-            indexFromData: { $0.url },
-            applyToReference: AudioEntity.apply,
-            performReferenceChanges: { playbackChanges in
+    public static var translation: ValueToObjectTranslator<URL, AudioEntity, AVAudioPlayer> {
+        return ValueToObjectTranslator<URL, AudioEntity, AVAudioPlayer>(
+            indexOfValue: { $0.url },
+            updateObjectWithValue: AudioEntity.apply,
+            commitChanges: { playbackChanges in
                 playbackChanges.removed.map(AVAudioPlayer.stop).forEach({ $0() })
                 playbackChanges.added.map(AVAudioPlayer.play).forEach({ _ = $0() })
             }
