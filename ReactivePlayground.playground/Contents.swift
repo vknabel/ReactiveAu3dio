@@ -10,24 +10,6 @@ import ValidatedExtension
 import ReactiveAu3dio
 import RxLens
 
-/// TODO: MOVE INTO RxLens
-
-public extension Lens {
-    public func child<C>(from: @escaping (B) -> C, to: @escaping (C, B) -> B) -> Lens<A, C> {
-        return Lens<A, C>(
-            from: { from(self.from($0)) },
-            to: { (c: C, a: A) -> A in
-                let b: B = to(c, self.from(a))
-                return self.to(b, a) as A
-            }
-        )
-    }
-
-    public func asChild<S>(of parent: Lens<S, A>) -> Lens<S, B> {
-        return parent.child(from: from, to: to)
-    }
-}
-
 // TODO: REMOVE
 
 extension DisplayEntity {

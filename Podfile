@@ -11,7 +11,7 @@ target 'ReactiveAu3dio' do
   pod 'ValidatedExtension', '~> 4.0'
   pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
-  pod 'RxLens', '~> 0.1'
+  pod 'RxLens', '~> 0.1.2'
 
   target 'ReactiveAu3dioTests' do
     inherit! :search_paths
