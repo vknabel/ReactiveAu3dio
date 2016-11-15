@@ -47,3 +47,15 @@ public let currentLevelLens = Lens(
         }
     }
 )
+
+import RxSwift
+
+public extension Store {
+    public var currentLevel: Observable<Level> {
+        return self.ssio.from(currentLevelLens)
+            .flatMap { level -> Observable<Level> in
+                guard let nonNil = level else { return Observable.empty() }
+                return Observable.of(nonNil)
+        }
+    }
+}

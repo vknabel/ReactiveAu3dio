@@ -8,51 +8,12 @@ import RxSwift
 import EasyInject
 import ValidatedExtension
 import ReactiveAu3dio
-
-// REMOVE
-
 import RxLens
 
-extension Store {
-    var currentLevel: Observable<Level> {
-        return self.ssio.from(currentLevelLens)
-            .flatMap{ level -> Observable<Level> in
-                guard let nonNil = level else { return Observable.empty() }
-                return Observable.of(nonNil)
-        }
-    }
-}
+/// TODO: MOVE INTO RxLens
 
-extension Lens where A: Injector {
-    static func with<T>(injected provider: Provider<A.Key, T>) -> Lens<A, T?> {
-        return Lens<A, T?>(
-            from: { (injector: A) -> T? in
-                let optional: T? = try? injector.resolving(from: provider)
-                return optional
-            },
-            to: { property, entity in
-                if let property = property {
-                    return entity.providing(property, for: provider)
-                } else {
-                    return entity.revoking(for: provider)
-                }
-            }
-        )
-    }
-}
-
-let entitiesOfLevelLens: Lens<Level, [Entity]?> = .with(injected: .levelEntities)
-let imageOfEntityLens: Lens<Entity, String?> = .with(injected: .entityImage)
-let nameOfEntityLens: Lens<Entity, String?> = .with(injected: .entityName)
-let positionOfEntityLens: Lens<Entity, Position?> = .with(injected: .entityPosition)
-
-func entitiesStream(from source: Observable<Level>) -> Observable<[Entity]> {
-    return source.from(entitiesOfLevelLens).map({ $0 ?? [] })
-}
-
-extension Lens {
-    /// TODO: MOVE INTO RxLens
-    func child<C>(from: @escaping (B) -> C, to: @escaping (C, B) -> B) -> Lens<A, C> {
+public extension Lens {
+    public func child<C>(from: @escaping (B) -> C, to: @escaping (C, B) -> B) -> Lens<A, C> {
         return Lens<A, C>(
             from: { from(self.from($0)) },
             to: { (c: C, a: A) -> A in
@@ -62,74 +23,15 @@ extension Lens {
         )
     }
 
-    func asChild<S>(of parent: Lens<S, A>) -> Lens<S, B> {
+    public func asChild<S>(of parent: Lens<S, A>) -> Lens<S, B> {
         return parent.child(from: from, to: to)
     }
 }
 
-func combiningPositionWithImageStream<Image>(image: Observable<Image>, position: Observable<Position>) {
-    Observable.combineLatest(image, position) { image, position in
-        (image, position)
-    }
-}
-
-func flatten<T>(_ source: Observable<T?>) -> Observable<T> {
-    return source.flatMap { optional -> Observable<T> in
-        if let v = optional {
-            return Observable.of(v)
-        } else {
-            return Observable.empty()
-        }
-    }
-}
-
-func maybeEqual<T: Equatable>(_ lhs: T?, _ rhs: T?) -> Bool {
-    switch (lhs, rhs) {
-    case (.none, .none):
-        return true
-    case let (.some(lhs), .some(rhs)):
-        return lhs == rhs
-    default:
-        return false
-    }
-}
-
-struct DisplayEntity {
-    let name: String
-    let image: String
-    let position: Position
-
-    static func from(name: String?, image: String?, position: Position?) -> DisplayEntity? {
-        if let name = name, let image = image, let position = position {
-            return DisplayEntity(name: name, image: image, position: position)
-        } else {
-            return nil
-        }
-    }
-}
-
-typealias EntityView = UIImageView
+// TODO: REMOVE
 
 extension DisplayEntity {
-    /// Assumes that image will never change for performance reasons
-    func apply(to view: EntityView?) -> EntityView? {
-        let view = view ?? EntityView(image: UIImage(named: image))
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
-
-    static func from(entity: Entity) -> DisplayEntity? {
-        guard let name = EntityWithName(value: entity)?.name,
-            let image = EntityWithImage(value: entity)?.image,
-            let position = EntityWithPosition(value: entity)?.position else {
-                return nil
-        }
-        return DisplayEntity(name: name, image: image, position: position)
-    }
-}
-
-extension DisplayEntity {
-    static func translation(in rootView: UIView) -> ValueToObjectTranslator<String, DisplayEntity, EntityView> {
+    public static func translation(in rootView: UIView) -> ValueToObjectTranslator<String, DisplayEntity, EntityView> {
         return ValueToObjectTranslator<String, DisplayEntity, EntityView>(
             indexOfValue: { $0.name },
             updateObjectWithValue: DisplayEntity.apply,
@@ -149,8 +51,8 @@ extension DisplayEntity {
                         fatalError()
                     }
                     func updateConstraint(with constant: CGFloat, first firstAttribute: NSLayoutAttribute, second secondAttribute: NSLayoutAttribute,
-                        other root: UIView?,
-                        multiplier: CGFloat = 1.0
+                                          other root: UIView?,
+                                          multiplier: CGFloat = 1.0
                         ) {
                         let isSameConstraint = { (constraint: NSLayoutConstraint) -> Bool in
                             return constraint.firstItem === view
@@ -224,8 +126,8 @@ extension DisplayEntity {
     }
 }
 
-extension Store {
-    var currentBackground: Observable<UIImage?> {
+public extension Store {
+    public var currentBackground: Observable<UIImage?> {
         return currentLevel
             .map({ level -> String? in
                 guard let background = LevelWithBackground(value: level)?.background else {
@@ -243,7 +145,7 @@ extension Store {
             })
     }
 
-    var displayEntities: Observable<[DisplayEntity]> {
+    public var displayEntities: Observable<[DisplayEntity]> {
         return ssio.from(currentLevelLens).map({ level in
             guard let level = level,
                 let entities = entitiesOfLevelLens.from(level) else {
@@ -253,7 +155,7 @@ extension Store {
         })
     }
 
-    func displayEntities(into view: UIView) -> Observable<Changes<UIImageView>> {
+    public func displayEntities(into view: UIView) -> Observable<Changes<EntityView>> {
         return DisplayEntity.translation(in: view).execute(with: displayEntities)
     }
 }
