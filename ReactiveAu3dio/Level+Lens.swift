@@ -9,3 +9,4 @@
 import RxLens
 
 public let entitiesOfLevelLens: Lens<Level, [Entity]?> = .with(injected: .levelEntities)
+public let positionOfLevelLens: Lens<Level, Position?> = .with(injected: .levelPosition)
