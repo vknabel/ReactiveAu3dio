@@ -13,7 +13,7 @@ import RxLens
 // TODO: REMOVE
 
 extension DisplayEntity {
-    public static func translation(in rootView: UIView) -> ValueToObjectTranslator<String, DisplayEntity, EntityView> {
+    public static func translation(into rootView: UIView) -> ValueToObjectTranslator<String, DisplayEntity, EntityView> {
         return ValueToObjectTranslator<String, DisplayEntity, EntityView>(
             indexOfValue: { $0.name },
             updateObjectWithValue: DisplayEntity.apply,
@@ -108,6 +108,68 @@ extension DisplayEntity {
     }
 }
 
+private typealias ViewConstraintTriplet = (view: UIView, centerX: NSLayoutConstraint, centerY: NSLayoutConstraint)
+private extension Store {
+    func displayPosition(into rootView: UIView) -> Observable<UIView> {
+        return currentLevel.scan(nil, accumulator: { (previous: ViewConstraintTriplet?, currentLevel: Level) in
+                guard let position = LevelWithPosition(value: currentLevel)?.position else {
+                    return previous
+                }
+            let maxWidth = rootView.bounds.size.width - rootView.bounds.origin.x
+            let maxHeight = rootView.bounds.size.height - rootView.bounds.origin.y
+            
+            let current: (view: UIView, centerX: NSLayoutConstraint, centerY: NSLayoutConstraint)
+            if let previous = previous {
+                current = previous
+            } else {
+                current = {
+                    let displayedView = UIView()
+                    displayedView.backgroundColor = .red
+                    displayedView.translatesAutoresizingMaskIntoConstraints = false
+                    rootView.addSubview(displayedView)
+                    
+                    let centerX = NSLayoutConstraint(
+                        item: displayedView,
+                        attribute: .centerX,
+                        relatedBy: .equal,
+                        toItem: rootView,
+                        attribute: .leading,
+                        multiplier: 1.0,
+                        constant: 0.5 * maxWidth
+                    )
+                    let centerY = NSLayoutConstraint(
+                        item: displayedView,
+                        attribute: .centerY,
+                        relatedBy: .equal,
+                        toItem: rootView,
+                        attribute: .top,
+                        multiplier: 1.0,
+                        constant: 0.5 * maxHeight
+                    )
+                    NSLayoutConstraint.activate([
+                        centerX,
+                        centerY,
+                        NSLayoutConstraint(item: displayedView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 10),
+                        NSLayoutConstraint(item: displayedView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 10)
+                    ])
+                    return (displayedView, centerX, centerY)
+                }()
+            }
+            
+            current.centerX.constant = CGFloat(position.x) * maxWidth
+            current.centerY.constant = CGFloat(position.y) * maxHeight
+            return current
+        })
+        .flatMap({ (triple: ViewConstraintTriplet?) -> Observable<UIView> in
+            if let view = triple?.view {
+                return .of(view)
+            } else {
+                return .empty()
+            }
+        });
+    }
+}
+
 public extension Store {
     public var currentBackground: Observable<UIImage?> {
         return currentLevel
@@ -138,8 +200,13 @@ public extension Store {
     }
 
     public func displayEntities(into view: UIView) -> Observable<Changes<EntityView>> {
-        return DisplayEntity.translation(in: view).execute(with: displayEntities)
+        return DisplayEntity.translation(into: view)
+            .execute(with: displayEntities)
     }
+    
+    /*func displayView(into view: UIView) -> Observable<Void> {
+        return
+    }*/
 }
 
 // REMOVE
@@ -188,14 +255,22 @@ let main = Store(
 
 import UIKit
 import RxCocoa
-
+public extension Observable {
+    public static func from(optional elements: E?) -> Observable {
+        return Observable.from(elements)
+    }
+    
+    public static func from(_ elements: E?...) -> Observable {
+        return Observable.from(elements.flatMap({ $0 }))
+    }
+}
 final class ViewController: UIViewController {
     weak var slider: UISlider! = nil
     weak var background: UIView! = nil
     /// Will be disposed when view controller will be deallocated
-    let bag = DisposeBag()
+    var bag = DisposeBag()
 
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         // Start audio playback
         main.levelAudioPlayback
             .subscribe(onCompleted: { PlaygroundPage.current.finishExecution() })
@@ -204,14 +279,28 @@ final class ViewController: UIViewController {
         main.displayEntities(into: background)
             .subscribe()
             .addDisposableTo(bag)
+        
+        main.displayPosition(into: background)
+            .subscribe()
+            .addDisposableTo(bag)
 
         // bind slider to position of player
+        main.currentLevel.from(positionOfLevelLens)
+            .flatMap(Observable.from(optional:))
+            .single()
+            .subscribe(onNext: { [weak self] in self?.slider.value = $0.x })
+            .addDisposableTo(bag)
+        
         slider.rx.value.asObservable()
             .distinctUntilChanged()
             .subscribe(onNext: { value in
                 main.next(LevelAction.turnTo(value))
             })
             .addDisposableTo(bag)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        bag = DisposeBag()
     }
 
     override func viewDidLayoutSubviews() {
