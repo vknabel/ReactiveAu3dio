@@ -48,6 +48,16 @@ extension Store {
     }
 
     public var levelAudioPlayback: Observable<Changes<AVAudioPlayer>> {
+        var currentPlayers: Set<AVAudioPlayer> = []
+        func stopRemainingPlayers() {
+            currentPlayers.forEach { $0.stop() }
+            currentPlayers = []
+        }
         return AudioEntity.translation.execute(with: levelAudios)
+            .do(
+                onNext: { currentPlayers = $0.current },
+                onCompleted: stopRemainingPlayers,
+                onDispose: stopRemainingPlayers
+        )
     }
 }
