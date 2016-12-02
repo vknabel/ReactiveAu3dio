@@ -9,12 +9,28 @@
 public struct Position: Equatable {
     public typealias Coordinate = Float
 
-    public var x: Coordinate
-    public var y: Coordinate
+    private var _x: Coordinate
+    public var x: Coordinate {
+        get {
+            return _x
+        }
+        set {
+            _x = abs(newValue).truncatingRemainder(dividingBy: 1.0)
+        }
+    }
+    private var _y: Coordinate
+    public var y: Coordinate {
+        get {
+            return _y
+        }
+        set {
+            _y = abs(newValue).truncatingRemainder(dividingBy: 1.0)
+        }
+    }
 
     public init(x: Coordinate, y: Coordinate) {
-        self.x = abs(x).truncatingRemainder(dividingBy: 1.0)
-        self.y = abs(y).truncatingRemainder(dividingBy: 1.0)
+        _x = abs(x).truncatingRemainder(dividingBy: 1.0)
+        _y = abs(y).truncatingRemainder(dividingBy: 1.0)
     }
 
     public static func == (lhs: Position, rhs: Position) -> Bool {

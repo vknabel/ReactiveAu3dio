@@ -26,6 +26,22 @@ final class PositionTests: QuickSpec {
                 expect(position.y) == 0.0
             }
             
+            it("setting coordinates with too big values") {
+                var position = Position(x: 0.1, y: 0.1)
+                position.x = 1.5
+                position.y = 3.0
+                expect(position.x) == 0.5
+                expect(position.y) == 0.0
+            }
+            
+            it("setting coordinates negative") {
+                var position = Position(x: 0.1, y: 0.1)
+                position.x = -1.25
+                position.y = -3.0
+                expect(position.x) == 0.25
+                expect(position.y) == 0.0
+            }
+            
             it("Equatable") {
                 let west = Position(x: 0.0, y: 0.0)
                 let north = Position(x: 0.25, y: 0.25)
