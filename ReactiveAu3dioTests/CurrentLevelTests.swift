@@ -31,7 +31,7 @@ final class CurrentLevelTestTests: QuickSpec {
             }
 
             it("will validate when set") {
-                let ssi = Ssi().providing(Level(), for: .currentLevel)
+                let ssi = Ssi().providing(Level(), for: .ssiCurrentLevel)
                 let isValid = try? SsiHasCurrentLevel.validate(ssi)
                 expect(isValid) == true
             }
@@ -41,43 +41,43 @@ final class CurrentLevelTestTests: QuickSpec {
         describe("current level lens") {
             it("doesn't return level when invalid") {
                 let ssi = Ssi()
-                let level = currentLevelLens.from(ssi)
+                let level = currentLevelOfSsiLens.from(ssi)
                 expect(level).to(beNil())
             }
 
             it("returns when valid") {
-                let ssi = Ssi().providing(Level(), for: .currentLevel)
-                let level = currentLevelLens.from(ssi)
+                let ssi = Ssi().providing(Level(), for: .ssiCurrentLevel)
+                let level = currentLevelOfSsiLens.from(ssi)
                 expect(level).toNot(beNil())
             }
 
             it("won't change when setting nil when invalid") {
                 let ssi = Ssi()
-                let updated = currentLevelLens.to(nil, ssi)
+                let updated = currentLevelOfSsiLens.to(nil, ssi)
                 expect(ssi.debugDescription) == updated.debugDescription
             }
 
             it("will change when setting nil when valid") {
-                let ssi = Ssi().providing(Level(), for: .currentLevel)
-                let updated = currentLevelLens.to(nil, ssi)
+                let ssi = Ssi().providing(Level(), for: .ssiCurrentLevel)
+                let updated = currentLevelOfSsiLens.to(nil, ssi)
                 expect(ssi.debugDescription) != updated.debugDescription
             }
 
             it("will change when setting level when invalid") {
                 let ssi = Ssi()
-                let updated = currentLevelLens.to(Level(), ssi)
+                let updated = currentLevelOfSsiLens.to(Level(), ssi)
                 expect(ssi.debugDescription) != updated.debugDescription
             }
 
             it("won't change when setting same level when valid") {
-                let ssi = Ssi().providing(Level(), for: .currentLevel)
-                let updated = currentLevelLens.to(Level(), ssi)
+                let ssi = Ssi().providing(Level(), for: .ssiCurrentLevel)
+                let updated = currentLevelOfSsiLens.to(Level(), ssi)
                 expect(ssi.debugDescription) == updated.debugDescription
             }
 
             it("will change when setting other level when valid") {
-                let ssi = Ssi().providing(Level(), for: .currentLevel)
-                let updated = currentLevelLens.to(Level().providing("Name", for: .levelName), ssi)
+                let ssi = Ssi().providing(Level(), for: .ssiCurrentLevel)
+                let updated = currentLevelOfSsiLens.to(Level().providing("Name", for: .levelName), ssi)
                 expect(ssi.debugDescription) != updated.debugDescription
             }
 
@@ -92,7 +92,7 @@ final class CurrentLevelTestTests: QuickSpec {
                         ]
                     ),
                     reducers: [
-                        lensReducer(actionOf: CurrentLevelAction.self, currentLevelLens, reducer: { (level, action) -> Level? in
+                        lensReducer(actionOf: CurrentLevelAction.self, currentLevelOfSsiLens, reducer: { (level, action) -> Level? in
                             executed = true
                             return level
                         })

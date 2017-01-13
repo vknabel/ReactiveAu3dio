@@ -21,7 +21,7 @@ final class StoreTests: QuickSpec {
         describe("the store") {
             it("will only be executed when subscribed") {
                 var executed = false
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = Observable.just(initial).do { _ in
                     executed = true
                 }
@@ -38,7 +38,7 @@ final class StoreTests: QuickSpec {
             }
 
             it("returns intial state by default") {
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = Observable.just(initial)
                 let main = Store(
                     initial: initialStream,
@@ -52,7 +52,7 @@ final class StoreTests: QuickSpec {
 
             it("skips further initials") {
                 let scheduler = TestScheduler(initialClock: 0)
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = scheduler.createColdObservable([
                     next(100, initial),
                     next(100, initial)
@@ -71,7 +71,7 @@ final class StoreTests: QuickSpec {
             }
 
             it("won't apply reducers by default") {
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = Observable.just(initial)
                 let main = Store(
                     initial: initialStream,
@@ -84,7 +84,7 @@ final class StoreTests: QuickSpec {
             }
 
             it("completes when actions complete") {
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = Observable.just(initial)
                 let main = Store(
                     initial: initialStream,
@@ -102,7 +102,7 @@ final class StoreTests: QuickSpec {
                 let scheduler = TestScheduler(initialClock: 0)
 
                 var executed = false
-                let initial = Ssi().providing([], for: .scenarios)
+                let initial = Ssi().providing([], for: .ssiScenarios)
                 let initialStream = scheduler.createColdObservable([next(100, initial)])
                 let main = Store(
                     initial: initialStream,
