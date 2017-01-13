@@ -1,6 +1,6 @@
 os: osx
 sudo: required
-osx_image: xcode8
+osx_image: xcode8.2
 language: generic
 
 env:
@@ -16,7 +16,7 @@ install:
 script:
   - set -o pipefail
   - rock test
-  - rock lint
+  - rock run lint
 
 cache:
   - bundler
