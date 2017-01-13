@@ -111,7 +111,7 @@ extension DisplayEntity {
 private typealias ViewConstraintTriplet = (view: UIView, centerX: NSLayoutConstraint, centerY: NSLayoutConstraint)
 private extension Store {
     func displayPosition(into rootView: UIView) -> Observable<UIView> {
-        return ssio.from(currentLevelLens).scan(nil, accumulator: { (previous: ViewConstraintTriplet?, currentLevel: Level?) in
+        return ssio.from(currentLevelOfSsiLens).scan(nil, accumulator: { (previous: ViewConstraintTriplet?, currentLevel: Level?) in
                 guard let currentLevel = currentLevel, let position = LevelWithPosition(value: currentLevel)?.position else {
                     return previous
                 }
@@ -190,7 +190,7 @@ public extension Store {
     }
 
     public var displayEntities: Observable<[DisplayEntity]> {
-        return ssio.from(currentLevelLens).map({ level in
+        return ssio.from(currentLevelOfSsiLens).map({ level in
             guard let level = level,
                 let entities = entitiesOfLevelLens.from(level) else {
                     return []
@@ -218,7 +218,7 @@ enum LevelAction: Action {
     case moveTo(Position)
     case turnTo(Position.Coordinate)
 
-    static let reducer = lensReducer(actionOf: LevelAction.self, currentLevelLens, reducer: { (level: Level?, action: LevelAction) -> Level? in
+    static let reducer = lensReducer(actionOf: LevelAction.self, currentLevelOfSsiLens, reducer: { (level: Level?, action: LevelAction) -> Level? in
         switch action {
         case let .start(new) where level == nil:
             return new

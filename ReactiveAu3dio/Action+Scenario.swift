@@ -20,15 +20,15 @@ public enum ScenarioAction: Action {
                 scenarios.append(newScenario)
                 print(scenarios.count)
                 var value = validated.value
-                value.revoke(for: .scenarios)
-                value.provide(scenarios, for: .scenarios)
+                value.revoke(for: .ssiScenarios)
+                value.provide(scenarios, for: .ssiScenarios)
                 return value
             }
     })
 
     public static var logger: Reducer = actionReducer { (ssi: Ssi, action: ScenarioAction) in
         var ssi = ssi
-        let scenarios = (try? ssi.resolve(from: .scenarios)) ?? []
+        let scenarios = (try? ssi.resolve(from: .ssiScenarios)) ?? []
         print("-", "ScenarioAction.\(action.name)")
         return ssi
     }
