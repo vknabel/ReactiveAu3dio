@@ -1,0 +1,47 @@
+import RxLens
+import EasyInject
+import ValidatedExtension
+
+// swiftlint:disable vertical_whitespace
+// swiftlint:disable file_length
+
+// MARK: - GenerateInjector Types
+{% for t in types.implementing.GenerateInjector %}{% if t.annotations.name %}{#
+#}{% ifnot t.annotations.skipTypedef %}{#
+#}// MARK: {{ t.annotations.name|upperFirst }}
+public enum {{ t.annotations.name|upperFirst }}FieldKey { }
+public typealias {{ t.annotations.name|upperFirst }}Field = GenericProvidableKey<{{ t.annotations.name|upperFirst }}FieldKey>
+public typealias {{ t.annotations.name|upperFirst }} = {{ t.annotations.injector|default:"StrictInjector" }}<{{ t.annotations.name|upperFirst }}Field>
+public typealias {{ t.annotations.name|upperFirst }}Provider<v> = Provider<{{ t.annotations.name|upperFirst }}Field, v>{#
+#}{% endif %}
+{% for c in t.cases %}
+// MARK: {{ t.annotations.name|upperFirst }}.{{ c.name }}
+public typealias {{ t.annotations.name|upperFirst }}With{{ c.name|upperFirst }} = Validated<{{ t.annotations.name|upperFirst }}Has{{ c.name|upperFirst }}>
+public let {{ c.name }}Of{{ t.annotations.name|upperFirst }}Lens: Lens<{{ t.annotations.name|upperFirst }}, {{ c.annotations.type }}?> = .with(injected: .{{ t.annotations.name }}{{ c.name|upperFirst }})
+{% endfor %}{% endif %}{% endfor %}
+
+// MARK: - GenerateInjector Implementation
+{% for t in types.implementing.GenerateInjector %}{% if t.annotations.name %}{% for c in t.cases %}
+// MARK: {{ t.annotations.name|upperFirst }}.{{ c.name }}
+
+public extension Provider {
+    public static var {{ t.annotations.name }}{{ c.name|upperFirst }}: {{ t.annotations.name|upperFirst }}Provider<{{ c.annotations.type }}> {
+        return .derive()
+    }
+}
+
+public struct {{ t.annotations.name|upperFirst }}Has{{ c.name|upperFirst }}: Validator {
+    public static func validate(_ value: {{ t.annotations.name|upperFirst }}) throws -> Bool {
+        _ = try value.resolving(from: .{{ t.annotations.name }}{{ c.name|upperFirst }})
+        return true
+    }
+}
+
+public extension ValidatedType where ValidatorType == {{ t.annotations.name|upperFirst }}Has{{ c.name|upperFirst }} {
+    public var {{ c.name }}: {{ c.annotations.type }} {
+        // will only fail if ValidatorType has a bug
+        // swiftlint:disable:next force_try
+        return try! value.resolving(from: .{{ t.annotations.name }}{{ c.name|upperFirst }})
+    }
+}
+{% endfor %}{% endif %}{% endfor %}

@@ -1,7 +1,10 @@
 name: ReactiveAu3dio
 dependencies:
   - swiftlint@0.16.0
+  - sourcery@0.5.2
 scripts:
+  generate:
+    - sourcery ReactiveAu3dio/Model.swift Templates/ReactiveAu3dio/Validator.swift.stencil ReactiveAu3dio/Model.generated.swift
   lint:
     - swiftlint autocorrect
     - swiftlint
