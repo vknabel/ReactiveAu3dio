@@ -111,8 +111,8 @@ extension DisplayEntity {
 private typealias ViewConstraintTriplet = (view: UIView, centerX: NSLayoutConstraint, centerY: NSLayoutConstraint)
 private extension Store {
     func displayPosition(into rootView: UIView) -> Observable<UIView> {
-        return currentLevel.scan(nil, accumulator: { (previous: ViewConstraintTriplet?, currentLevel: Level) in
-                guard let position = LevelWithPosition(value: currentLevel)?.position else {
+        return ssio.from(currentLevelLens).scan(nil, accumulator: { (previous: ViewConstraintTriplet?, currentLevel: Level?) in
+                guard let currentLevel = currentLevel, let position = LevelWithPosition(value: currentLevel)?.position else {
                     return previous
                 }
             let maxWidth = rootView.bounds.size.width - rootView.bounds.origin.x
@@ -149,8 +149,8 @@ private extension Store {
                     NSLayoutConstraint.activate([
                         centerX,
                         centerY,
-                        NSLayoutConstraint(item: displayedView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 10),
-                        NSLayoutConstraint(item: displayedView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 10)
+                        displayedView.widthAnchor.constraint(equalToConstant: 10),
+                        displayedView.heightAnchor.constraint(equalToConstant: 10)
                     ])
                     return (displayedView, centerX, centerY)
                 }()
@@ -266,7 +266,8 @@ public extension Observable {
 }
 final class ViewController: UIViewController {
     weak var slider: UISlider! = nil
-    weak var background: UIView! = nil
+    weak var left: UIView! = nil
+    weak var right: UIView! = nil
     /// Will be disposed when view controller will be deallocated
     var bag = DisposeBag()
 
@@ -276,12 +277,44 @@ final class ViewController: UIViewController {
             .subscribe(onCompleted: { PlaygroundPage.current.finishExecution() })
             .addDisposableTo(bag)
 
-        main.displayEntities(into: background)
+        main.displayEntities(into: left)
+            .subscribe()
+            .addDisposableTo(bag)
+        main.displayEntities(into: right)
             .subscribe()
             .addDisposableTo(bag)
         
-        main.displayPosition(into: background)
+        main.displayPosition(into: view)
             .subscribe()
+            .addDisposableTo(bag)
+        
+        main.currentLevel.from(positionOfLevelLens)
+            .scan((false, nil), accumulator: { previous, next -> (Bool, Position?) in
+                guard let previous = previous.1?.x, let current = next?.x, abs(previous - current) > 0.5 else {
+                    return (false, next)
+                }
+                switch (previous, current) {
+                case (0..<0.5, 0.5...1.0):
+                    return (true, next)
+                case (0.5...1.0, 0..<0.5):
+                    return (true, next)
+                default:
+                    return (false, next)
+                }
+            })
+            .filter({ $0.0 })
+            .flatMap({ Observable.from(optional: $0.1?.x) })
+            .subscribe(onNext: { [weak self] xCoordinate in
+                if xCoordinate < 0.5 {
+                    print("Right")
+                    self?.left.backgroundColor = .lightGray
+                    self?.right.backgroundColor = .gray
+                } else {
+                    print("Left")
+                    self?.left.backgroundColor = .gray
+                    self?.right.backgroundColor = .lightGray
+                }
+            })
             .addDisposableTo(bag)
 
         // bind slider to position of player
@@ -303,7 +336,10 @@ final class ViewController: UIViewController {
         bag = DisposeBag()
     }
 
+    var seeded = false
     override func viewDidLayoutSubviews() {
+        guard !seeded else { return }
+        seeded = true
         // Load default data
         // Won't be required in actual app
         main.next(LevelAction.start({
@@ -327,7 +363,7 @@ final class ViewController: UIViewController {
 
         let slider = UISlider()
         slider.minimumValue = 0.0
-        slider.maximumValue = 1.0
+        slider.maximumValue = 2.0
         view.addSubview(slider)
         self.slider = slider
 
@@ -338,33 +374,34 @@ final class ViewController: UIViewController {
             slider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0)
         ])
 
-        let background = UIView()
-        background.backgroundColor = .gray
-        view.addSubview(background)
-        self.background = background
+        let left = UIView()
+        left.backgroundColor = .gray
+        view.addSubview(left)
+        self.left = left
 
-        background.translatesAutoresizingMaskIntoConstraints = false
+        let right = UIView()
+        right.backgroundColor = .lightGray
+        view.addSubview(right)
+        self.right = right
+        
+        left.translatesAutoresizingMaskIntoConstraints = false
+        right.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            background.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8.0),
-            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            background.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            left.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8.0),
+            left.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            left.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            left.trailingAnchor.constraint(equalTo: right.leadingAnchor),
+            left.widthAnchor.constraint(equalTo: right.widthAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            right.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8.0),
+            right.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            right.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
         self.view = view
-    }
-
-    var leftView: UIView!
-    var rightView: UIView!
-    func loadTestView(into view: UIView) {
-        let (leftView, rightView) = (UIView(), UIView())
-        defer {
-            view.addSubview(leftView)
-            view.addSubview(rightView)
-            (self.leftView, self.rightView) = (leftView, rightView)
-        }
-        
-        UIImageView().rx.image
     }
 }
 
