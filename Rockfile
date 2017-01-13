@@ -1,0 +1,17 @@
+name: ReactiveAu3dio
+dependencies:
+  - swiftlint@0.16.0
+scripts:
+  lint:
+    - swiftlint autocorrect
+    - swiftlint
+  docs:
+    - jazzy
+  build:
+    - ./Scripts/run-build.sh
+  test:
+    - ./Scripts/run-test.sh
+  prepare:
+    - rock install
+    - bundle install
+    - pod install

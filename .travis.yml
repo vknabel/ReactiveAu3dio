@@ -1,16 +1,28 @@
 language: generic
 sudo: required
-dist: trusty
-matrix:
-  include:
-    - os: osx
-      language: objective-c
-      osx_image: xcode8
-      xcode_workspace: ReactiveAu3dio.xcworkspace
-      xcode_scheme: ReactiveAu3dio
-      script:
-        - xcodebuild test -workspace ReactiveAu3dio.xcworkspace -scheme ReactiveAu3dio -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
+os: osx
+language: objective-c
+osx_image: xcode8
+
+env:
+  global:
+    - ROCK_PATH="$HOME/.rock" # default
+    - PATH="$PATH:./.rock/bin:$ROCK_PATH/bin"
+
 install:
-  - ./Scripts/install-swiftlint.sh
+  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+  - curl -sL https://raw.githubusercontent.com/vknabel/Rock/master/Scripts/Install.generated.swift | swift
+  - rock run prepare
+
 script:
-  - swiftlint
+  - set -o pipefail
+  - rock test
+  - rock lint
+
+cache:
+  - bundler
+  - cocoapods
+  - directories:
+    - .rock
+    - $HOME/.swiftenv
+    - $HOME/.rock
