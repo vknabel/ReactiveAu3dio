@@ -1,8 +1,8 @@
 included:
-  - ReactiveAu3dio
+  - Sources
 excluded:
   - Pods
-  - ReactiveAu3dio/Model.generated.swift
+  - Sources/ReactiveAu3dio/Model.generated.swift
 opt_in_rules:
   - empty_count
   - force_unwrapping

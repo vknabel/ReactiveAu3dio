@@ -24,7 +24,6 @@
 		BAB02B6A1DBE44400003FB57 /* ConvenienceReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB02B691DBE44400003FB57 /* ConvenienceReducerTests.swift */; };
 		BAB14DE81DBE014B006D119D /* ReactiveAu3dio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB14DDE1DBE014B006D119D /* ReactiveAu3dio.framework */; };
 		BAB14DEF1DBE014B006D119D /* ReactiveAu3dio.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BAB14E0B1DBE026B006D119D /* Action+Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E011DBE026B006D119D /* Action+Counter.swift */; };
 		BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E021DBE026B006D119D /* Action+Goal.swift */; };
 		BAB14E0D1DBE026B006D119D /* Action+Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E031DBE026B006D119D /* Action+Scenario.swift */; };
 		BAB14E101DBE026B006D119D /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB14E061DBE026B006D119D /* Redux.swift */; };
@@ -41,6 +40,7 @@
 		BAD7C0911E2917C8005E2465 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7C0901E2917C8005E2465 /* Model.swift */; };
 		BAD7C0931E292D54005E2465 /* Model.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7C0921E292D54005E2465 /* Model.generated.swift */; };
 		BAD7C0951E292EDD005E2465 /* Store+CurrentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7C0941E292EDD005E2465 /* Store+CurrentLevel.swift */; };
+		BAD7C09A1E293670005E2465 /* Action+Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7C0991E293670005E2465 /* Action+Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		BAB14DE21DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB14DE71DBE014B006D119D /* ReactiveAu3dioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveAu3dioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB14DEE1DBE014B006D119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAB14E011DBE026B006D119D /* Action+Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Counter.swift"; sourceTree = "<group>"; };
 		BAB14E021DBE026B006D119D /* Action+Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Goal.swift"; sourceTree = "<group>"; };
 		BAB14E031DBE026B006D119D /* Action+Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Action+Scenario.swift"; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		BAB14E061DBE026B006D119D /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		BAD7C0901E2917C8005E2465 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BAD7C0921E292D54005E2465 /* Model.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.generated.swift; sourceTree = "<group>"; };
 		BAD7C0941E292EDD005E2465 /* Store+CurrentLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CurrentLevel.swift"; sourceTree = "<group>"; };
+		BAD7C0991E293670005E2465 /* Action+Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Counter.swift"; sourceTree = "<group>"; };
 		BB55EBC91A9C4701762B3C3B /* Pods-ReactiveAu3dioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dioTests/Pods-ReactiveAu3dioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D55A64EBD1EB5911ABBB19F1 /* Pods-ReactiveAu3dio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAu3dio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveAu3dio/Pods-ReactiveAu3dio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,16 +147,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BAA390A41DBF69360054C0C8 /* Domain */ = {
+		BAA390A41DBF69360054C0C8 /* ReactiveAu3dio */ = {
 			isa = PBXGroup;
 			children = (
+				BAD7C0991E293670005E2465 /* Action+Counter.swift */,
+				BAB14E021DBE026B006D119D /* Action+Goal.swift */,
+				BAB14E031DBE026B006D119D /* Action+Scenario.swift */,
 				BAD184871DBFA0D0007CD94E /* Sound.swift */,
 				BAD7C0901E2917C8005E2465 /* Model.swift */,
+				BA2B38EC1DDB714C00B322C0 /* DisplayEntity.swift */,
 				BAD7C0921E292D54005E2465 /* Model.generated.swift */,
 				BAD1848B1DC0F944007CD94E /* Position.swift */,
 				BAD7C0941E292EDD005E2465 /* Store+CurrentLevel.swift */,
 			);
-			name = Domain;
+			path = ReactiveAu3dio;
 			sourceTree = "<group>";
 		};
 		BAA390A51DBF69460054C0C8 /* ReactiveCore */ = {
@@ -166,6 +170,7 @@
 				BAB14E071DBE026B006D119D /* Redux+Convenience.swift */,
 			);
 			name = ReactiveCore;
+			path = RxRedux;
 			sourceTree = "<group>";
 		};
 		BAA390B31DBF79C60054C0C8 /* Demo */ = {
@@ -184,7 +189,7 @@
 		BAB14DD41DBE014B006D119D = {
 			isa = PBXGroup;
 			children = (
-				BAB14DE01DBE014B006D119D /* ReactiveAu3dio */,
+				BAB14DE01DBE014B006D119D /* Sources */,
 				BAB14DEB1DBE014B006D119D /* ReactiveAu3dioTests */,
 				BAA390B31DBF79C60054C0C8 /* Demo */,
 				BAB14DDF1DBE014B006D119D /* Products */,
@@ -203,22 +208,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BAB14DE01DBE014B006D119D /* ReactiveAu3dio */ = {
+		BAB14DE01DBE014B006D119D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				BAB14DE11DBE014B006D119D /* ReactiveAu3dio.h */,
+				BAA390A41DBF69360054C0C8 /* ReactiveAu3dio */,
+				BAD7C09B1E29369C005E2465 /* ReactiveAu3dioHelper */,
+				BAD1848F1DC13489007CD94E /* ReactiveAV */,
 				BAA390A51DBF69460054C0C8 /* ReactiveCore */,
-				BA2B38E41DDB6F7300B322C0 /* RxLens+EasyInject.swift */,
-				BA2B38EA1DDB711E00B322C0 /* maybeEqual.swift */,
-				BAB14E011DBE026B006D119D /* Action+Counter.swift */,
-				BAB14E021DBE026B006D119D /* Action+Goal.swift */,
-				BAB14E031DBE026B006D119D /* Action+Scenario.swift */,
-				BA64BCE91DD654A000A833C0 /* Translator.swift */,
-				BAD1848F1DC13489007CD94E /* Platform */,
-				BAA390A41DBF69360054C0C8 /* Domain */,
+				BAD7C0981E2934F8005E2465 /* ReactiveUI */,
+				BAD7C0971E293422005E2465 /* RxValueToObjectTranslator */,
 				BAB14DE21DBE014B006D119D /* Info.plist */,
 			);
-			path = ReactiveAu3dio;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		BAB14DEB1DBE014B006D119D /* ReactiveAu3dioTests */ = {
@@ -237,15 +239,13 @@
 			path = ReactiveAu3dioTests;
 			sourceTree = "<group>";
 		};
-		BAD1848F1DC13489007CD94E /* Platform */ = {
+		BAD1848F1DC13489007CD94E /* ReactiveAV */ = {
 			isa = PBXGroup;
 			children = (
 				BAD184901DC1349A007CD94E /* AudioEntity.swift */,
 				BACAF81F1DC24DF6007AD671 /* AudioPlayback.swift */,
-				BA2B38EC1DDB714C00B322C0 /* DisplayEntity.swift */,
-				BA2B38EE1DDB717000B322C0 /* DisplayView.swift */,
 			);
-			name = Platform;
+			path = ReactiveAV;
 			sourceTree = "<group>";
 		};
 		BAD184941DC139ED007CD94E /* Platform */ = {
@@ -254,6 +254,31 @@
 				BAD184921DC139E6007CD94E /* AudioEntityTests.swift */,
 			);
 			name = Platform;
+			sourceTree = "<group>";
+		};
+		BAD7C0971E293422005E2465 /* RxValueToObjectTranslator */ = {
+			isa = PBXGroup;
+			children = (
+				BA64BCE91DD654A000A833C0 /* Translator.swift */,
+			);
+			path = RxValueToObjectTranslator;
+			sourceTree = "<group>";
+		};
+		BAD7C0981E2934F8005E2465 /* ReactiveUI */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B38EE1DDB717000B322C0 /* DisplayView.swift */,
+			);
+			path = ReactiveUI;
+			sourceTree = "<group>";
+		};
+		BAD7C09B1E29369C005E2465 /* ReactiveAu3dioHelper */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B38E41DDB6F7300B322C0 /* RxLens+EasyInject.swift */,
+				BA2B38EA1DDB711E00B322C0 /* maybeEqual.swift */,
+			);
+			path = ReactiveAu3dioHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +540,7 @@
 				BAD184881DBFA0D0007CD94E /* Sound.swift in Sources */,
 				BA64BCEA1DD654A000A833C0 /* Translator.swift in Sources */,
 				BA2B38E51DDB6F7300B322C0 /* RxLens+EasyInject.swift in Sources */,
+				BAD7C09A1E293670005E2465 /* Action+Counter.swift in Sources */,
 				BAB14E101DBE026B006D119D /* Redux.swift in Sources */,
 				BACAF8201DC24DF6007AD671 /* AudioPlayback.swift in Sources */,
 				BAB14E0C1DBE026B006D119D /* Action+Goal.swift in Sources */,
@@ -524,7 +550,6 @@
 				BA2B38EB1DDB711E00B322C0 /* maybeEqual.swift in Sources */,
 				BAD7C0931E292D54005E2465 /* Model.generated.swift in Sources */,
 				BAB14E111DBE026B006D119D /* Redux+Convenience.swift in Sources */,
-				BAB14E0B1DBE026B006D119D /* Action+Counter.swift in Sources */,
 				BA2B38EF1DDB717000B322C0 /* DisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
